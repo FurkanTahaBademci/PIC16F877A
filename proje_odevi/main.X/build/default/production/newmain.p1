@@ -6,13 +6,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
 "2921
 [v _TRISA0 `Vb ~T0 @X0 0 e@1064 ]
-"14 newmain.c
+"15 newmain.c
 [v _lcdBaslangic `(v ~T0 @X0 0 ef ]
-"17
+"18
 [v _ekrandaGoster `(v ~T0 @X0 0 ef1`*uc ]
-"15
+"16
 [v _komut `(v ~T0 @X0 0 ef1`uc ]
-"13
+"19
+[v _bekle `(v ~T0 @X0 0 ef1`i ]
+"14
 [v _adcOku `(v ~T0 @X0 0 ef ]
 "340 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic16f877a.h
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
@@ -32,6 +34,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
 "2222
 [v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
+"2663
+[v _RA1 `Vb ~T0 @X0 0 e@41 ]
+[v F38 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.45\pic\include\builtins.h
+[v __delay `JF38 ~T0 @X0 0 e ]
+[p i __delay ]
+"2666 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic16f877a.h
+[v _RA2 `Vb ~T0 @X0 0 e@42 ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -1076,252 +1086,350 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 118: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 119: extern __bank0 __bit __powerdown;
 [; ;pic.h: 120: extern __bank0 __bit __timeout;
-"10 newmain.c
+"8 newmain.c
 [p x FOSC=HS ]
 [p x WDTE=OFF ]
 [p x LVP=OFF ]
-[; ;newmain.c: 10: __config("__CONFIG", "pic", "FOSC_HS & WDTE_OFF & PWRTE_OFF & CP_OFF & BOREN_ON & LVP_OFF & CPD_OFF & WRT_OFF & DEBUG_OFF");
-[; ;newmain.c: 13: void adcOku();
-[; ;newmain.c: 14: void lcdBaslangic();
-[; ;newmain.c: 15: void komut(unsigned char a);
-[; ;newmain.c: 16: void veri(unsigned char b);
-[; ;newmain.c: 17: void ekrandaGoster(unsigned char *metin);
-"19
-[v _i `i ~T0 @X0 1 e ]
-[; ;newmain.c: 19: int i;
+[; ;newmain.c: 8: __config("__CONFIG", "pic", "FOSC_HS &WDTE_OFF & PWRTE_OFF & CP_OFF & BOREN_ON & LVP_OFF & CPD_OFF & WRT_OFF & DEBUG_OFF");
+[; ;newmain.c: 14: void adcOku();
+[; ;newmain.c: 15: void lcdBaslangic();
+[; ;newmain.c: 16: void komut(unsigned char a);
+[; ;newmain.c: 17: void veri(unsigned char b);
+[; ;newmain.c: 18: void ekrandaGoster(unsigned char *metin);
+[; ;newmain.c: 19: void bekle(int milisaniye);
 [v $root$_main `(v ~T0 @X0 0 e ]
-"21
+"23
 [v _main `(v ~T0 @X0 1 ef ]
-"22
+"24
 {
-[; ;newmain.c: 21: void main()
-[; ;newmain.c: 22: {
+[; ;newmain.c: 23: void main()
+[; ;newmain.c: 24: {
 [e :U _main ]
 [f ]
-[; ;newmain.c: 24: TRISB = 0;
-"24
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;newmain.c: 25: TRISD = 0;
-"25
-[e = _TRISD -> -> 0 `i `uc ]
-[; ;newmain.c: 26: TRISA0 = 1;
+[; ;newmain.c: 26: TRISB = 0;
 "26
+[e = _TRISB -> -> 0 `i `uc ]
+[; ;newmain.c: 27: TRISD = 0;
+"27
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;newmain.c: 28: TRISA0 = 1;
+"28
 [e = _TRISA0 -> -> 1 `i `b ]
-[; ;newmain.c: 29: lcdBaslangic();
-"29
+[; ;newmain.c: 31: lcdBaslangic();
+"31
 [e ( _lcdBaslangic ..  ]
-[; ;newmain.c: 30: ekrandaGoster("ADC Degeri :");
-"30
+[; ;newmain.c: 32: ekrandaGoster("Furkan T.Bademci");
+"32
 [e ( _ekrandaGoster (1 -> :s 1C `*uc ]
-[; ;newmain.c: 32: while (1)
-"32
-[e :U 97 ]
-[; ;newmain.c: 33: {
+[; ;newmain.c: 33: komut(0xC0);
 "33
-{
-[; ;newmain.c: 35: komut(0x8C);
+[e ( _komut (1 -> -> 192 `i `uc ]
+[; ;newmain.c: 34: ekrandaGoster("G210104016");
+"34
+[e ( _ekrandaGoster (1 -> :s 2C `*uc ]
+[; ;newmain.c: 35: bekle(3000);
 "35
-[e ( _komut (1 -> -> 140 `i `uc ]
-[; ;newmain.c: 36: adcOku();
-"36
-[e ( _adcOku ..  ]
+[e ( _bekle (1 -> 3000 `i ]
+[; ;newmain.c: 37: lcdBaslangic();
 "37
-}
-[e :U 96 ]
-"32
-[e $U 97  ]
-[e :U 98 ]
-[; ;newmain.c: 37: }
-[; ;newmain.c: 38: }
+[e ( _lcdBaslangic ..  ]
+[; ;newmain.c: 38: ekrandaGoster("ADC DEGERI :");
 "38
-[e :UE 95 ]
-}
+[e ( _ekrandaGoster (1 -> :s 3C `*uc ]
+[; ;newmain.c: 40: while (1)
 "40
-[v _lcdBaslangic `(v ~T0 @X0 1 ef ]
+[e :U 97 ]
+[; ;newmain.c: 41: {
 "41
 {
-[; ;newmain.c: 40: void lcdBaslangic()
-[; ;newmain.c: 41: {
+[; ;newmain.c: 43: komut(0x8C);
+"43
+[e ( _komut (1 -> -> 140 `i `uc ]
+[; ;newmain.c: 44: adcOku();
+"44
+[e ( _adcOku ..  ]
+"45
+}
+[e :U 96 ]
+"40
+[e $U 97  ]
+[e :U 98 ]
+[; ;newmain.c: 45: }
+[; ;newmain.c: 46: }
+"46
+[e :UE 95 ]
+}
+"48
+[v _lcdBaslangic `(v ~T0 @X0 1 ef ]
+"49
+{
+[; ;newmain.c: 48: void lcdBaslangic()
+[; ;newmain.c: 49: {
 [e :U _lcdBaslangic ]
 [f ]
-[; ;newmain.c: 43: komut(0x38);
-"43
+[; ;newmain.c: 51: komut(0x38);
+"51
 [e ( _komut (1 -> -> 56 `i `uc ]
-[; ;newmain.c: 44: komut(0x0C);
-"44
+[; ;newmain.c: 52: komut(0x0C);
+"52
 [e ( _komut (1 -> -> 12 `i `uc ]
-[; ;newmain.c: 45: komut(0x06);
-"45
+[; ;newmain.c: 53: komut(0x06);
+"53
 [e ( _komut (1 -> -> 6 `i `uc ]
-[; ;newmain.c: 46: komut(0x80);
-"46
+[; ;newmain.c: 54: komut(0x80);
+"54
 [e ( _komut (1 -> -> 128 `i `uc ]
-[; ;newmain.c: 47: }
-"47
+[; ;newmain.c: 55: komut(0x01);
+"55
+[e ( _komut (1 -> -> 1 `i `uc ]
+[; ;newmain.c: 56: }
+"56
 [e :UE 99 ]
 }
-"49
-[v _komut `(v ~T0 @X0 1 ef1`uc ]
-"50
-{
-[; ;newmain.c: 49: void komut(unsigned char a)
-[; ;newmain.c: 50: {
-[e :U _komut ]
-"49
-[v _a `uc ~T0 @X0 1 r1 ]
-"50
-[f ]
-[; ;newmain.c: 52: PORTD = a;
-"52
-[e = _PORTD _a ]
-[; ;newmain.c: 53: RB0 = 0;
-"53
-[e = _RB0 -> -> 0 `i `b ]
-[; ;newmain.c: 54: RB1 = 0;
-"54
-[e = _RB1 -> -> 0 `i `b ]
-[; ;newmain.c: 55: RB2 = 1;
-"55
-[e = _RB2 -> -> 1 `i `b ]
-[; ;newmain.c: 56: for (i = 0; i <= 1000; i++);
-"56
-{
-[e = _i -> 0 `i ]
-[e $ <= _i -> 1000 `i 101  ]
-[e $U 102  ]
-[e :U 101 ]
-[e ++ _i -> 1 `i ]
-[e $ <= _i -> 1000 `i 101  ]
-[e :U 102 ]
-}
-[; ;newmain.c: 57: RB2 = 0;
-"57
-[e = _RB2 -> -> 0 `i `b ]
-[; ;newmain.c: 58: }
 "58
+[v _komut `(v ~T0 @X0 1 ef1`uc ]
+"59
+{
+[; ;newmain.c: 58: void komut(unsigned char a)
+[; ;newmain.c: 59: {
+[e :U _komut ]
+"58
+[v _a `uc ~T0 @X0 1 r1 ]
+"59
+[f ]
+[; ;newmain.c: 61: PORTD = a;
+"61
+[e = _PORTD _a ]
+[; ;newmain.c: 62: RB0 = 0;
+"62
+[e = _RB0 -> -> 0 `i `b ]
+[; ;newmain.c: 63: RB1 = 0;
+"63
+[e = _RB1 -> -> 0 `i `b ]
+[; ;newmain.c: 64: RB2 = 1;
+"64
+[e = _RB2 -> -> 1 `i `b ]
+[; ;newmain.c: 65: bekle(10);
+"65
+[e ( _bekle (1 -> 10 `i ]
+[; ;newmain.c: 66: RB2 = 0;
+"66
+[e = _RB2 -> -> 0 `i `b ]
+[; ;newmain.c: 67: }
+"67
 [e :UE 100 ]
 }
-"60
-[v _veri `(v ~T0 @X0 1 ef1`uc ]
-"61
-{
-[; ;newmain.c: 60: void veri(unsigned char b)
-[; ;newmain.c: 61: {
-[e :U _veri ]
-"60
-[v _b `uc ~T0 @X0 1 r1 ]
-"61
-[f ]
-[; ;newmain.c: 63: PORTD = b;
-"63
-[e = _PORTD _b ]
-[; ;newmain.c: 64: RB0 = 1;
-"64
-[e = _RB0 -> -> 1 `i `b ]
-[; ;newmain.c: 65: RB1 = 0;
-"65
-[e = _RB1 -> -> 0 `i `b ]
-[; ;newmain.c: 66: RB2 = 1;
-"66
-[e = _RB2 -> -> 1 `i `b ]
-[; ;newmain.c: 67: for (i = 0; i <= 1000; i++);
-"67
-{
-[e = _i -> 0 `i ]
-[e $ <= _i -> 1000 `i 105  ]
-[e $U 106  ]
-[e :U 105 ]
-[e ++ _i -> 1 `i ]
-[e $ <= _i -> 1000 `i 105  ]
-[e :U 106 ]
-}
-[; ;newmain.c: 68: RB2 = 0;
-"68
-[e = _RB2 -> -> 0 `i `b ]
-[; ;newmain.c: 69: }
 "69
-[e :UE 104 ]
-}
-"71
-[v _ekrandaGoster `(v ~T0 @X0 1 ef1`*uc ]
-"72
+[v _veri `(v ~T0 @X0 1 ef1`uc ]
+"70
 {
-[; ;newmain.c: 71: void ekrandaGoster(unsigned char *metin)
-[; ;newmain.c: 72: {
-[e :U _ekrandaGoster ]
-"71
-[v _metin `*uc ~T0 @X0 1 r1 ]
-"72
+[; ;newmain.c: 69: void veri(unsigned char b)
+[; ;newmain.c: 70: {
+[e :U _veri ]
+"69
+[v _b `uc ~T0 @X0 1 r1 ]
+"70
 [f ]
-[; ;newmain.c: 74: while (*metin)
+[; ;newmain.c: 72: PORTD = b;
+"72
+[e = _PORTD _b ]
+[; ;newmain.c: 73: RB0 = 1;
+"73
+[e = _RB0 -> -> 1 `i `b ]
+[; ;newmain.c: 74: RB1 = 0;
 "74
-[e $U 109  ]
-[e :U 110 ]
-[; ;newmain.c: 75: {
+[e = _RB1 -> -> 0 `i `b ]
+[; ;newmain.c: 75: RB2 = 1;
 "75
-{
-[; ;newmain.c: 76: veri(*metin++);
+[e = _RB2 -> -> 1 `i `b ]
+[; ;newmain.c: 76: bekle(10);
 "76
-[e ( _veri (1 *U ++ _metin * -> -> 1 `i `x -> -> # *U _metin `i `x ]
+[e ( _bekle (1 -> 10 `i ]
+[; ;newmain.c: 77: RB2 = 0;
 "77
-}
-[e :U 109 ]
-"74
-[e $ != -> *U _metin `i -> -> -> 0 `i `uc `i 110  ]
-[e :U 111 ]
-[; ;newmain.c: 77: }
+[e = _RB2 -> -> 0 `i `b ]
 [; ;newmain.c: 78: }
 "78
-[e :UE 108 ]
+[e :UE 101 ]
 }
 "80
-[v _adcOku `(v ~T0 @X0 1 ef ]
+[v _ekrandaGoster `(v ~T0 @X0 1 ef1`*uc ]
 "81
 {
-[; ;newmain.c: 80: void adcOku()
+[; ;newmain.c: 80: void ekrandaGoster(unsigned char *metin)
 [; ;newmain.c: 81: {
+[e :U _ekrandaGoster ]
+"80
+[v _metin `*uc ~T0 @X0 1 r1 ]
+"81
+[f ]
+[; ;newmain.c: 83: while (*metin)
+"83
+[e $U 103  ]
+[e :U 104 ]
+[; ;newmain.c: 84: {
+"84
+{
+[; ;newmain.c: 85: veri(*metin++);
+"85
+[e ( _veri (1 *U ++ _metin * -> -> 1 `i `x -> -> # *U _metin `i `x ]
+"86
+}
+[e :U 103 ]
+"83
+[e $ != -> *U _metin `i -> -> -> 0 `i `uc `i 104  ]
+[e :U 105 ]
+[; ;newmain.c: 86: }
+[; ;newmain.c: 87: }
+"87
+[e :UE 102 ]
+}
+"89
+[v _adcOku `(v ~T0 @X0 1 ef ]
+"90
+{
+[; ;newmain.c: 89: void adcOku()
+[; ;newmain.c: 90: {
 [e :U _adcOku ]
 [f ]
-"82
+"91
 [v _adcDeger `ui ~T0 @X0 1 a ]
-[; ;newmain.c: 82: unsigned int adcDeger;
-[; ;newmain.c: 85: ADCON1 = 0xc0;
-"85
-[e = _ADCON1 -> -> 192 `i `uc ]
-[; ;newmain.c: 86: ADCON0 = 0x85;
-"86
-[e = _ADCON0 -> -> 133 `i `uc ]
-[; ;newmain.c: 87: while (GO_nDONE)
-"87
-[e $U 113  ]
-[e :U 114 ]
-[; ;newmain.c: 88: ;
-"88
-[e :U 113 ]
-"87
-[e $ _GO_nDONE 114  ]
-[e :U 115 ]
-[; ;newmain.c: 89: adcDeger = ((ADRESH << 8) | (ADRESL));
-"89
-[e = _adcDeger -> | << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
-[; ;newmain.c: 90: adcDeger = (adcDeger / 3) - 1;
-"90
-[e = _adcDeger - / _adcDeger -> -> 3 `i `ui -> -> 1 `i `ui ]
-[; ;newmain.c: 93: veri((adcDeger / 1000) + 48);
-"93
-[e ( _veri (1 -> + / _adcDeger -> -> 1000 `i `ui -> -> 48 `i `ui `uc ]
-[; ;newmain.c: 94: veri(((adcDeger / 100) % 10) + 48);
+[; ;newmain.c: 91: unsigned int adcDeger;
+[; ;newmain.c: 94: ADCON1 = 0xc0;
 "94
-[e ( _veri (1 -> + % / _adcDeger -> -> 100 `i `ui -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
-[; ;newmain.c: 95: veri(((adcDeger / 10) % 10) + 48);
+[e = _ADCON1 -> -> 192 `i `uc ]
+[; ;newmain.c: 95: ADCON0 = 0x85;
 "95
-[e ( _veri (1 -> + % / _adcDeger -> -> 10 `i `ui -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
-[; ;newmain.c: 96: veri((adcDeger % 10) + 48);
+[e = _ADCON0 -> -> 133 `i `uc ]
+[; ;newmain.c: 96: while (GO_nDONE)
 "96
-[e ( _veri (1 -> + % _adcDeger -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
-[; ;newmain.c: 97: }
+[e $U 107  ]
+[e :U 108 ]
+[; ;newmain.c: 97: ;
 "97
-[e :UE 112 ]
+[e :U 107 ]
+"96
+[e $ _GO_nDONE 108  ]
+[e :U 109 ]
+[; ;newmain.c: 98: adcDeger = ((ADRESH << 8) | (ADRESL));
+"98
+[e = _adcDeger -> | << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+[; ;newmain.c: 99: adcDeger = (adcDeger / 3) - 1;
+"99
+[e = _adcDeger - / _adcDeger -> -> 3 `i `ui -> -> 1 `i `ui ]
+[; ;newmain.c: 102: veri((adcDeger / 1000) + 48);
+"102
+[e ( _veri (1 -> + / _adcDeger -> -> 1000 `i `ui -> -> 48 `i `ui `uc ]
+[; ;newmain.c: 103: veri(((adcDeger / 100) % 10) + 48);
+"103
+[e ( _veri (1 -> + % / _adcDeger -> -> 100 `i `ui -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
+[; ;newmain.c: 104: veri(((adcDeger / 10) % 10) + 48);
+"104
+[e ( _veri (1 -> + % / _adcDeger -> -> 10 `i `ui -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
+[; ;newmain.c: 105: veri((adcDeger % 10) + 48);
+"105
+[e ( _veri (1 -> + % _adcDeger -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
+[; ;newmain.c: 107: komut(0xC0);
+"107
+[e ( _komut (1 -> -> 192 `i `uc ]
+[; ;newmain.c: 108: if (RA1 == 1)
+"108
+[e $ ! == -> _RA1 `i -> 1 `i 110  ]
+[; ;newmain.c: 109: {
+"109
+{
+[; ;newmain.c: 110: ekrandaGoster("Sag");
+"110
+[e ( _ekrandaGoster (1 -> :s 4C `*uc ]
+[; ;newmain.c: 111: while (RA1 == 1)
+"111
+[e $U 111  ]
+[e :U 112 ]
+[; ;newmain.c: 112: ;
+"112
+[e :U 111 ]
+"111
+[e $ == -> _RA1 `i -> 1 `i 112  ]
+[e :U 113 ]
+[; ;newmain.c: 113: _delay((unsigned long)((100)*(4000000/4000.0)));
+"113
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"114
 }
-[a 1C 65 68 67 32 68 101 103 101 114 105 32 58 0 ]
-
+[e :U 110 ]
+[; ;newmain.c: 114: }
+[; ;newmain.c: 116: if (RA2 == 1)
+"116
+[e $ ! == -> _RA2 `i -> 1 `i 114  ]
+[; ;newmain.c: 117: {
+"117
+{
+[; ;newmain.c: 118: ekrandaGoster("Sol");
+"118
+[e ( _ekrandaGoster (1 -> :s 5C `*uc ]
+[; ;newmain.c: 119: while (RA2 == 1)
+"119
+[e $U 115  ]
+[e :U 116 ]
+[; ;newmain.c: 120: ;
+"120
+[e :U 115 ]
+"119
+[e $ == -> _RA2 `i -> 1 `i 116  ]
+[e :U 117 ]
+[; ;newmain.c: 121: _delay((unsigned long)((100)*(4000000/4000.0)));
+"121
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"122
+}
+[e :U 114 ]
+[; ;newmain.c: 122: }
+[; ;newmain.c: 123: }
+"123
+[e :UE 106 ]
+}
+"125
+[v _bekle `(v ~T0 @X0 1 ef1`i ]
+"126
+{
+[; ;newmain.c: 125: void bekle(int milisaniye)
+[; ;newmain.c: 126: {
+[e :U _bekle ]
+"125
+[v _milisaniye `i ~T0 @X0 1 r1 ]
+"126
+[f ]
+"127
+[v _i `i ~T0 @X0 1 a ]
+[; ;newmain.c: 127: int i;
+[; ;newmain.c: 128: for (i = 0; i < milisaniye; i++)
+"128
+{
+[e = _i -> 0 `i ]
+[e $U 122  ]
+"129
+[e :U 119 ]
+[; ;newmain.c: 129: {
+{
+[; ;newmain.c: 130: _delay((unsigned long)((1)*(4000000/4000.0)));
+"130
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"131
+}
+"128
+[e ++ _i -> 1 `i ]
+[e :U 122 ]
+[e $ < _i _milisaniye 119  ]
+[e :U 120 ]
+"131
+}
+[; ;newmain.c: 131: }
+[; ;newmain.c: 132: }
+"132
+[e :UE 118 ]
+}
+[a 5C 83 111 108 0 ]
+[a 1C 70 117 114 107 97 110 32 84 46 66 97 100 101 109 99 105 0 ]
+[a 4C 83 97 103 0 ]
+[a 3C 65 68 67 32 68 69 71 69 82 73 32 58 0 ]
+[a 2C 71 50 49 48 49 48 52 48 49 54 0 ]
