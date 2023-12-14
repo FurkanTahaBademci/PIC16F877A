@@ -1,14 +1,19 @@
 #include <pic.h>
+#include <stdio.h>
+#include <string.h>
 
 #define RS RB0
 #define RW RB1
 #define E RB2
 
+#define DUGME_SAG RA1      // Örneğin, sağ yön düğmesinin bağlı olduğu pin
+#define DUGME_SOL RA2      // Örneğin, sol yön düğmesinin bağlı olduğu pin
+#define _XTAL_FREQ 4000000 // 4 MHz kristal kullan?l?yorsa
+
 // PIC konfigürasyon ayarları
 __CONFIG(FOSC_HS &WDTE_OFF & PWRTE_OFF & CP_OFF & BOREN_ON & LVP_OFF & CPD_OFF & WRT_OFF & DEBUG_OFF);
 
-#define DUGME_SAG RA1 // Örneğin, sağ yön düğmesinin bağlı olduğu pin
-#define DUGME_SOL RA2 // Örneğin, sol yön düğmesinin bağlı olduğu pin
+char yon[4] = "BOS";
 
 // Fonksiyon prototipleri
 void adcOku();
@@ -18,21 +23,22 @@ void veri(unsigned char b);
 void ekrandaGoster(unsigned char *metin);
 void bekle(int milisaniye);
 
-#define _XTAL_FREQ 4000000 // 4 MHz kristal kullan?l?yorsa
-
 void main()
 {
     // Giriş/Çıkış tanımlamaları
     TRISB = 0; // Port B ve Port C Çıkış (LCD)
     TRISD = 0;
-    TRISA0 = 1; // RA0 giriş (ADC)
+    TRISC = 1;
+    PORTB = 0;
+
+    TRISA0 = 1;
 
     // LCD başlangıç ayarları
     lcdBaslangic();
     ekrandaGoster("Furkan T.Bademci");
     komut(0xC0); // ikinci sat?ra ge�
     ekrandaGoster("G210104016");
-    bekle(3000);
+    bekle(500);
 
     lcdBaslangic();
     ekrandaGoster("ADC DEGERI :");
@@ -42,6 +48,26 @@ void main()
         // ADC değerini göstermek için LCD konumunu ayarla ve ADC okuma fonksiyonunu çağır
         komut(0x8C);
         adcOku();
+        komut(0xC0); // ikinci satıra ge�
+        ekrandaGoster("yon : ");
+        RB5 = 1;
+
+        if (RC0)
+        {
+            ekrandaGoster("SAG");
+            while (RC0 == 1)
+                ;
+            __delay_ms(100); // Debouncing için kısa bir bekleme
+        }
+
+        else if (RC1)
+        {
+            ekrandaGoster("SOL");
+            while (RC1 == 1)
+                ;
+            __delay_ms(100); // Debouncing için kısa bir bekleme
+        }
+        // ekrandaGoster(yon);
     }
 }
 
@@ -103,23 +129,6 @@ void adcOku()
     veri(((adcDeger / 100) % 10) + 48);
     veri(((adcDeger / 10) % 10) + 48);
     veri((adcDeger % 10) + 48);
-
-    komut(0xC0); // ikinci sat?ra ge�
-    if (DUGME_SAG == 1)
-    {
-        ekrandaGoster("Sag");
-        while (DUGME_SAG == 1)
-            ;
-        __delay_ms(100); // Debouncing için kısa bir bekleme
-    }
-
-    if (DUGME_SOL == 1)
-    {
-        ekrandaGoster("Sol");
-        while (DUGME_SOL == 1)
-            ;
-        __delay_ms(100); // Debouncing için kısa bir bekleme
-    }
 }
 
 void bekle(int milisaniye)
