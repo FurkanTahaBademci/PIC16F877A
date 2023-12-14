@@ -6,8 +6,8 @@
 #define RW RB1
 #define E RB2
 
-#define DUGME_SAG RA1      // Örneğin, sağ yön düğmesinin bağlı olduğu pin
-#define DUGME_SOL RA2      // Örneğin, sol yön düğmesinin bağlı olduğu pin
+#define DUGME_SAG RC0      // Örneğin, sağ yön düğmesinin bağlı olduğu pin
+#define DUGME_SOL RC1      // Örneğin, sol yön düğmesinin bağlı olduğu pin
 #define _XTAL_FREQ 4000000 // 4 MHz kristal kullan?l?yorsa
 
 // PIC konfigürasyon ayarları
@@ -49,21 +49,19 @@ void main()
         komut(0x8C);
         adcOku();
         komut(0xC0); // ikinci satıra ge�
-        ekrandaGoster("yon : ");
-        RB5 = 1;
 
-        if (RC0)
+        if (DUGME_SAG)
         {
-            ekrandaGoster("SAG");
-            while (RC0 == 1)
+            ekrandaGoster("YON : SAG");
+            while (DUGME_SAG == 1)
                 ;
             __delay_ms(100); // Debouncing için kısa bir bekleme
         }
 
-        else if (RC1)
+        else if (DUGME_SOL)
         {
-            ekrandaGoster("SOL");
-            while (RC1 == 1)
+            ekrandaGoster("YON : SOL");
+            while (DUGME_SOL == 1)
                 ;
             __delay_ms(100); // Debouncing için kısa bir bekleme
         }
