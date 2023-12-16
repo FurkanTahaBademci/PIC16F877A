@@ -1,5 +1,5 @@
 
-# 1 "C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\pic\__eeprom.c"
+# 1 "LCD_library.c"
 
 # 18 "C:\Program Files\Microchip\xc8\v2.45\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -1789,175 +1789,89 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 5 "C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\pic\__eeprom.c"
-void
-__eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
-{
-volatile unsigned char *cp = to;
 
-while (EECON1bits.WR) continue;
-EEADR = (unsigned char)from;
-while(size--) {
-while (EECON1bits.WR) continue;
+# 13 "LCD_library.h"
+#pragma config FOSC = XT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config BOREN = ON
+#pragma config LVP = ON
+#pragma config CPD = OFF
+#pragma config WRT = OFF
+#pragma config CP = OFF
 
-EECON1 &= 0x7F;
+# 44
+extern void bekle_milisaniye(unsigned int milisaniye);
+extern void komut_gonder(unsigned char komut);
+extern void ekran_temizle(void);
+extern void metin_yaz(const char *metin);
+extern void imleci_ayarla(unsigned char x, unsigned char y);
+extern void kutuphaneyi_baslat(void);
+extern void komut_calistir(unsigned char komut);
 
-EECON1bits.RD = 1;
-*cp++ = EEDATA;
-++EEADR;
-}
-
-# 36
-}
-
-void
-__memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
-{
-const unsigned char *ptr =from;
-
-while (EECON1bits.WR) continue;
-EEADR = (unsigned char)to - 1U;
-
-EECON1 &= 0x7F;
-
-while(size--) {
-while (EECON1bits.WR) {
-continue;
-}
-EEDATA = *ptr++;
-++EEADR;
-STATUSbits.CARRY = 0;
-if (INTCONbits.GIE) {
-STATUSbits.CARRY = 1;
-}
-INTCONbits.GIE = 0;
-EECON1bits.WREN = 1;
-EECON2 = 0x55;
-EECON2 = 0xAA;
-EECON1bits.WR = 1;
-EECON1bits.WREN = 0;
-if (STATUSbits.CARRY) {
-INTCONbits.GIE = 1;
+# 3 "LCD_library.c"
+void bekle_milisaniye(unsigned int milisaniye) {
+for (unsigned int i = 0; i < milisaniye; i++) {
+_delay((unsigned long)((1)*(4000000/4000.0)));
 }
 }
 
-# 101
+void komut_calistir(unsigned char komut) {
+RB1 = 0;
+RB0 = 0;
+RB2 = 1;
+PORTD = (komut & 0xF0);
+RB2 = 0;
+bekle_milisaniye(1);
+RB2 = 1;
+PORTD = ((komut & 0x0F) << 4);
+RB2 = 0;
+bekle_milisaniye(1);
 }
 
-unsigned char
-__eetoc(__eeprom void *addr)
-{
-unsigned char data;
-__eecpymem((unsigned char *) &data,addr,1);
-return data;
+void komut_gonder(unsigned char komut) {
+komut_calistir(komut);
 }
 
-unsigned int
-__eetoi(__eeprom void *addr)
-{
-unsigned int data;
-__eecpymem((unsigned char *) &data,addr,2);
-return data;
+void metin_yaz(const char *metin) {
+bekle_milisaniye(1);
+while (*metin) {
+RB0 = 1;
+RB2 = 1;
+PORTD = (*metin & 0xF0);
+RB2 = 0;
+bekle_milisaniye(1);
+RB2 = 1;
+PORTD = ((*metin & 0x0F) << 4);
+RB2 = 0;
+bekle_milisaniye(1);
+metin++;
+}
 }
 
-#pragma warning push
-#pragma warning disable 2040
-__uint24
-__eetom(__eeprom void *addr)
-{
-__uint24 data;
-__eecpymem((unsigned char *) &data,addr,3);
-return data;
-}
-#pragma warning pop
-
-unsigned long
-__eetol(__eeprom void *addr)
-{
-unsigned long data;
-__eecpymem((unsigned char *) &data,addr,4);
-return data;
+void ekran_temizle(void) {
+komut_gonder(1);
+bekle_milisaniye(2);
 }
 
-#pragma warning push
-#pragma warning disable 1516
-unsigned long long
-__eetoo(__eeprom void *addr)
-{
-unsigned long long data;
-__eecpymem((unsigned char *) &data,addr,8);
-return data;
-}
-#pragma warning pop
-
-unsigned char
-__ctoee(__eeprom void *addr, unsigned char data)
-{
-__memcpyee(addr,(unsigned char *) &data,1);
-return data;
+void imleci_ayarla(unsigned char x, unsigned char y) {
+if (x == 1)
+komut_gonder(128 + ((y - 1) % 16));
+else
+komut_gonder(192 + ((y - 1) % 16));
 }
 
-unsigned int
-__itoee(__eeprom void *addr, unsigned int data)
-{
-__memcpyee(addr,(unsigned char *) &data,2);
-return data;
+void kutuphaneyi_baslat(void) {
+RB0 = 0;
+RB2 = 0;
+RB1 = 0;
+bekle_milisaniye(15);
+RB2 = 1;
+komut_calistir(2);
+bekle_milisaniye(2);
+komut_calistir(40);
+komut_calistir(4);
+komut_calistir(12);
+ekran_temizle();
+komut_calistir(128);
 }
-
-#pragma warning push
-#pragma warning disable 2040
-__uint24
-__mtoee(__eeprom void *addr, __uint24 data)
-{
-__memcpyee(addr,(unsigned char *) &data,3);
-return data;
-}
-#pragma warning pop
-
-unsigned long
-__ltoee(__eeprom void *addr, unsigned long data)
-{
-__memcpyee(addr,(unsigned char *) &data,4);
-return data;
-}
-
-#pragma warning push
-#pragma warning disable 1516
-unsigned long long
-__otoee(__eeprom void *addr, unsigned long long data)
-{
-__memcpyee(addr,(unsigned char *) &data,8);
-return data;
-}
-#pragma warning pop
-
-float
-__eetoft(__eeprom void *addr)
-{
-float data;
-__eecpymem((unsigned char *) &data,addr,3);
-return data;
-}
-
-double
-__eetofl(__eeprom void *addr)
-{
-double data;
-__eecpymem((unsigned char *) &data,addr,4);
-return data;
-}
-
-float
-__fttoee(__eeprom void *addr, float data)
-{
-__memcpyee(addr,(unsigned char *) &data,3);
-return data;
-}
-
-double
-__fltoee(__eeprom void *addr, double data)
-{
-__memcpyee(addr,(unsigned char *) &data,4);
-return data;
-}
-
