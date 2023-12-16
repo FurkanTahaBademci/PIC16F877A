@@ -1,0 +1,4 @@
+Warning[203] C:\USERS\FURKAN\DESKTOP\MIKRO_LABLAR\DENEY_NO_3.X\DENEY_NO_3.ASM 15 : Found opcode in column 1. (GOTO)
+Message[302] C:\USERS\FURKAN\DESKTOP\MIKRO_LABLAR\DENEY_NO_3.X\DENEY_NO_3.ASM 20 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\FURKAN\DESKTOP\MIKRO_LABLAR\DENEY_NO_3.X\DENEY_NO_3.ASM 22 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] C:\USERS\FURKAN\DESKTOP\MIKRO_LABLAR\DENEY_NO_3.X\DENEY_NO_3.ASM 29 : Found directive in column 1. (END)
