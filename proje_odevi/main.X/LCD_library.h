@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   LCD_library.h
  * Author: furkan
  *
@@ -6,24 +6,23 @@
  */
 
 #ifndef LCD_LIBRARY_H
-#define	LCD_LIBRARY_H
-
+#define LCD_LIBRARY_H
 
 #include <xc.h>
 
-#pragma config FOSC = XT        // Osilatör Seçim bitleri (RC osilatörü)
-#pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT etkin)
-#pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT devre d???)
-#pragma config BOREN = ON       // Brown-out Reset Enable bit (BOR etkin)
-#pragma config LVP = ON         // Dü?ük Gerilimli (Tek Kaynakl?) Devre ?çi Seri Programlama Enable bit (RB3/PGM pini PGM i?levine sahiptir; dü?ük gerilim programlamas? etkin)
-#pragma config CPD = OFF        // Data EEPROM Belle?i Kod Koruma biti (Data EEPROM kod koruma kapal?)
-#pragma config WRT = OFF        // Flash Program Belle?i Yazma ?zin bitleri (Yazma korumas? kapal?; tüm program belle?i EECON kontrolü ile yaz?labilir)
-#pragma config CP = OFF         // Flash Program Belle?i Kod Koruma biti (Kod koruma kapal?)
+#pragma config FOSC = XT   // Osilatï¿½r Seï¿½im bitleri (RC osilatï¿½rï¿½)
+#pragma config WDTE = OFF  // Watchdog Timer Enable bit (WDT etkin)
+#pragma config PWRTE = OFF // Power-up Timer Enable bit (PWRT devre d???)
+#pragma config BOREN = ON  // Brown-out Reset Enable bit (BOR etkin)
+#pragma config LVP = ON    // Dï¿½?ï¿½k Gerilimli (Tek Kaynakl?) Devre ?ï¿½i Seri Programlama Enable bit (RB3/PGM pini PGM i?levine sahiptir; dï¿½?ï¿½k gerilim programlamas? etkin)
+#pragma config CPD = OFF   // Data EEPROM Belle?i Kod Koruma biti (Data EEPROM kod koruma kapal?)
+#pragma config WRT = OFF   // Flash Program Belle?i Yazma ?zin bitleri (Yazma korumas? kapal?; tï¿½m program belle?i EECON kontrolï¿½ ile yaz?labilir)
+#pragma config CP = OFF    // Flash Program Belle?i Kod Koruma biti (Kod koruma kapal?)
 
 #define _XTAL_FREQ 4000000
-#define RS  RB0 
-#define RW  RB1
-#define E   RB2
+#define RS RB0
+#define RW RB1
+#define E RB2
 #define LCD_PORT PORTD
 #define EKRANI_TEMIZLE 1
 #define BASLANGICA_DON 2
@@ -50,13 +49,13 @@ extern void imleci_ayarla(unsigned char x, unsigned char y);
 extern void kutuphaneyi_baslat(void);
 extern void komut_calistir(unsigned char komut);
 
-#ifdef	__cplusplus
-extern "C" {
+#ifdef __cplusplus
+extern "C"
+{
 #endif
 
-#ifdef	__cplusplus
+#ifdef __cplusplus
 }
 #endif
 
-#endif	/* LCD_LIBRARY_H */
-
+#endif /* LCD_LIBRARY_H */

@@ -12,11 +12,11 @@ void komut_calistir(unsigned char komut) {
     E = 1;
     LCD_PORT = (komut & 0xF0);
     E = 0;
-    bekle_milisaniye(1);
+    bekle_milisaniye(10);
     E = 1;
     LCD_PORT = ((komut & 0x0F) << 4);
     E = 0;
-    bekle_milisaniye(1);
+    bekle_milisaniye(10);
 }
 
 void komut_gonder(unsigned char komut) {

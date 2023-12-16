@@ -1055,29 +1055,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 118: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 119: extern __bank0 __bit __powerdown;
 [; ;pic.h: 120: extern __bank0 __bit __timeout;
-"14 LCD_library.h
+"13 LCD_library.h
 [p x FOSC=XT ]
-"15
+"14
 [p x WDTE=OFF ]
-"16
+"15
 [p x PWRTE=OFF ]
-"17
+"16
 [p x BOREN=ON ]
-"18
+"17
 [p x LVP=ON ]
-"19
+"18
 [p x CPD=OFF ]
-"20
+"19
 [p x WRT=OFF ]
-"21
+"20
 [p x CP=OFF ]
-[; ;LCD_library.h: 45: extern void bekle_milisaniye(unsigned int milisaniye);
-[; ;LCD_library.h: 46: extern void komut_gonder(unsigned char komut);
-[; ;LCD_library.h: 47: extern void ekran_temizle(void);
-[; ;LCD_library.h: 48: extern void metin_yaz(const char *metin);
-[; ;LCD_library.h: 49: extern void imleci_ayarla(unsigned char x, unsigned char y);
-[; ;LCD_library.h: 50: extern void kutuphaneyi_baslat(void);
-[; ;LCD_library.h: 51: extern void komut_calistir(unsigned char komut);
+[; ;LCD_library.h: 44: extern void bekle_milisaniye(unsigned int milisaniye);
+[; ;LCD_library.h: 45: extern void komut_gonder(unsigned char komut);
+[; ;LCD_library.h: 46: extern void ekran_temizle(void);
+[; ;LCD_library.h: 47: extern void metin_yaz(const char *metin);
+[; ;LCD_library.h: 48: extern void imleci_ayarla(unsigned char x, unsigned char y);
+[; ;LCD_library.h: 49: extern void kutuphaneyi_baslat(void);
+[; ;LCD_library.h: 50: extern void komut_calistir(unsigned char komut);
 "3 LCD_library.c
 [v _bekle_milisaniye `(v ~T0 @X0 1 ef1`ui ]
 {
@@ -1132,9 +1132,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;LCD_library.c: 14: RB2 = 0;
 "14
 [e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 15: bekle_milisaniye(1);
+[; ;LCD_library.c: 15: bekle_milisaniye(10);
 "15
-[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
+[e ( _bekle_milisaniye (1 -> -> 10 `i `ui ]
 [; ;LCD_library.c: 16: RB2 = 1;
 "16
 [e = _RB2 -> -> 1 `i `b ]
@@ -1144,9 +1144,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;LCD_library.c: 18: RB2 = 0;
 "18
 [e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 19: bekle_milisaniye(1);
+[; ;LCD_library.c: 19: bekle_milisaniye(10);
 "19
-[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
+[e ( _bekle_milisaniye (1 -> -> 10 `i `ui ]
 [; ;LCD_library.c: 20: }
 "20
 [e :UE 100 ]

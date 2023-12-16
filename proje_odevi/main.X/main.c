@@ -2,16 +2,31 @@
 #include "../main.X/LCD_library.h"
 
 const float oran = 5.0 / 1024.0;
+
+// Fonksiyon, ADC kullanarak belirli bir analog kanalın değerini ölçmeyi amaçlar.
 unsigned int adc_deger_okuma(unsigned char kanal)
 {
+    // Eğer belirtilen kanal değeri 0 ile 7 arasında değilse, hemen 0 değerini döndür.
     if (kanal > 7)
         return 0;
-    ADCON0 &= 0xB11000101;
+
+    // ADC kontrol register'ının belirli bitlerini sıfırlayarak önceki kanal ayarlarını temizler.
+    ADCON0 &= 0b11000011;
+
+    // Belirtilen kanalı seçmek için, kanal değeri 3 bit sola kaydırılır ve ADC kontrol register'ının ilgili bitleri ayarlanır.
     ADCON0 |= (kanal << 3);
+
+    // ADC kanal ayarı yapıldıktan sonra bir miktar beklenir. Bu, ADC'nin yeni kanal ayarını tam olarak benimsemesi için gereklidir.
     __delay_ms(2);
+
+    // ADC başlatma biti (GO_nDONE) 1 olarak ayarlanarak ADC dönüşümü başlatılır.
     GO_nDONE = 1;
+
+    // ADC dönüşümünün tamamlanmasını bekler. Bu işlem, GO_nDONE bitinin 0 olana kadar döngüde beklenmesini sağlar.
     while (GO_nDONE)
         ;
+
+    // ADC dönüşümü tamamlandıktan sonra, ADRESH ve ADRESL register'larının içeriğinden elde edilen değeri birleştirerek, unsigned bir tamsayı olarak döndürülür.
     return ((ADRESH << 8) + ADRESL);
 }
 
@@ -22,9 +37,10 @@ void main()
     TRISB = 0B11000000; // cikis
     TRISC = 0;          // cikis
     TRISD = 0;          // cikis
-    PORTC = 0;          // portc sifirla
-    PORTB = 0;          // portb sifirla
-    PORTD = 0;          // portd sifirla
+    PORTA = 0;
+    PORTC = 0; // portc sifirla
+    PORTB = 0; // portb sifirla
+    PORTD = 0; // portd sifirla
 
     T2CON = 0B00000101;   // timer2 on, prescaler 4
     CCP1CON = 0B00001111; // pwm modu
@@ -67,16 +83,18 @@ void main()
             RC4 = 0;
             RC6 = 0;
         }
-    }
-    V = adc_deger_okuma(0);
-    CCPR1L = V >> 2;
-    CCP1X = V & 1;
-    CCP1Y = V & 2;
-    __delay_ms(1000);
 
-    V = (int)((((ADRESH * 256) + ADRESL) * oran) / 5) * 100;
-    imleci_ayarla(1, 6);
-    metin_yaz("HIZ:");
-    komut_gonder(V % 100 / 10 + 48);  // ONLAR BASAMAGI
-    komut_gonder(V % 10 + 48);        // BIRLER BASAMAGI
+        V = adc_deger_okuma(0);
+        CCPR1L = V >> 2;
+        CCP1X = V & 1;
+        CCP1Y = V & 2;
+        __delay_ms(100);
+        imleci_ayarla(1, 6);
+        metin_yaz("HIZ:");
+
+        V = (int)(((((ADRESH * 256) + ADRESL) * oran) / 5) * 100);
+
+        komut_gonder(V % 100 / 10 + 48); // ONLAR BASAMAGI
+        komut_gonder(V % 10 + 48);       // BIRLER BASAMAGI
+    }
 }

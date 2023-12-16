@@ -19,8 +19,6 @@
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\common\Umul16.c
-[v ___wmul __wmul `(ui  1 e 2 0 ]
 "6 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
@@ -39,11 +37,13 @@
 [v _imleci_ayarla imleci_ayarla `(v  1 e 1 0 ]
 "54
 [v _kutuphaneyi_baslat kutuphaneyi_baslat `(v  1 e 1 0 ]
-"5 C:\Users\furkan\Desktop\PIC16F877A\proje_odevi\main.X\main.c
+"7 C:\Users\furkan\Desktop\PIC16F877A\proje_odevi\main.X\main.c
 [v _adc_deger_okuma adc_deger_okuma `(ui  1 e 2 0 ]
-"18
+"33
 [v _main main `(v  1 e 1 0 ]
-"216 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic16f877a.h
+"166 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic16f877a.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"216
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "278
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
@@ -99,10 +99,12 @@
 [v _RC5 RC5 `VEb  1 e 0 @61 ]
 "2726
 [v _RC6 RC6 `VEb  1 e 0 @62 ]
-"18 C:\Users\furkan\Desktop\PIC16F877A\proje_odevi\main.X\main.c
+"33 C:\Users\furkan\Desktop\PIC16F877A\proje_odevi\main.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"82
+"35
+[v main@V V `ui  1 a 2 46 ]
+"100
 } 0
 "26 C:\Users\furkan\Desktop\PIC16F877A\proje_odevi\main.X\LCD_library.c
 [v _metin_yaz metin_yaz `(v  1 e 1 0 ]
@@ -156,24 +158,14 @@
 [v bekle_milisaniye@milisaniye milisaniye `ui  1 p 2 0 ]
 "7
 } 0
-"5 C:\Users\furkan\Desktop\PIC16F877A\proje_odevi\main.X\main.c
+"7 C:\Users\furkan\Desktop\PIC16F877A\proje_odevi\main.X\main.c
 [v _adc_deger_okuma adc_deger_okuma `(ui  1 e 2 0 ]
 {
 [v adc_deger_okuma@kanal kanal `uc  1 a 1 wreg ]
 [v adc_deger_okuma@kanal kanal `uc  1 a 1 wreg ]
-"7
+"10
 [v adc_deger_okuma@kanal kanal `uc  1 a 1 4 ]
-"16
-} 0
-"15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\common\Umul16.c
-[v ___wmul __wmul `(ui  1 e 2 0 ]
-{
-"17
-[v ___wmul@product product `ui  1 a 2 12 ]
-"15
-[v ___wmul@multiplier multiplier `ui  1 p 2 43 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 45 ]
-"53
+"31
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]

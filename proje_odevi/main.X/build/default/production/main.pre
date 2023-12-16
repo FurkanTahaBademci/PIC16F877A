@@ -1790,7 +1790,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
 
-# 14 "../main.X/LCD_library.h"
+# 13 "../main.X/LCD_library.h"
 #pragma config FOSC = XT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -1800,7 +1800,7 @@ extern __bank0 __bit __timeout;
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-# 45
+# 44
 extern void bekle_milisaniye(unsigned int milisaniye);
 extern void komut_gonder(unsigned char komut);
 extern void ekran_temizle(void);
@@ -1811,16 +1811,31 @@ extern void komut_calistir(unsigned char komut);
 
 # 4 "main.c"
 const float oran = 5.0 / 1024.0;
+
+
 unsigned int adc_deger_okuma(unsigned char kanal)
 {
+
 if (kanal > 7)
 return 0;
-ADCON0 &= 0xB11000101;
+
+
+ADCON0 &= 0b11000011;
+
+
 ADCON0 |= (kanal << 3);
+
+
 _delay((unsigned long)((2)*(4000000/4000.0)));
+
+
 GO_nDONE = 1;
+
+
 while (GO_nDONE)
 ;
+
+
 return ((ADRESH << 8) + ADRESL);
 }
 
@@ -1831,6 +1846,7 @@ TRISA = 1;
 TRISB = 0B11000000;
 TRISC = 0;
 TRISD = 0;
+PORTA = 0;
 PORTC = 0;
 PORTB = 0;
 PORTD = 0;
@@ -1876,16 +1892,18 @@ if (RB7 == 0)
 RC4 = 0;
 RC6 = 0;
 }
-}
+
 V = adc_deger_okuma(0);
 CCPR1L = V >> 2;
 CCP1X = V & 1;
 CCP1Y = V & 2;
-_delay((unsigned long)((1000)*(4000000/4000.0)));
-
-V = (int)((((ADRESH * 256) + ADRESL) * oran) / 5) * 100;
+_delay((unsigned long)((100)*(4000000/4000.0)));
 imleci_ayarla(1, 6);
 metin_yaz("HIZ:");
+
+V = (int)(((((ADRESH * 256) + ADRESL) * oran) / 5) * 100);
+
 komut_gonder(V % 100 / 10 + 48);
 komut_gonder(V % 10 + 48);
+}
 }

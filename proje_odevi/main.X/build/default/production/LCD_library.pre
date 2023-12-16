@@ -1790,7 +1790,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
 
-# 14 "LCD_library.h"
+# 13 "LCD_library.h"
 #pragma config FOSC = XT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -1800,7 +1800,7 @@ extern __bank0 __bit __timeout;
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-# 45
+# 44
 extern void bekle_milisaniye(unsigned int milisaniye);
 extern void komut_gonder(unsigned char komut);
 extern void ekran_temizle(void);
@@ -1822,11 +1822,11 @@ RB0 = 0;
 RB2 = 1;
 PORTD = (komut & 0xF0);
 RB2 = 0;
-bekle_milisaniye(1);
+bekle_milisaniye(10);
 RB2 = 1;
 PORTD = ((komut & 0x0F) << 4);
 RB2 = 0;
-bekle_milisaniye(1);
+bekle_milisaniye(10);
 }
 
 void komut_gonder(unsigned char komut) {
