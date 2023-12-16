@@ -1,0 +1,36 @@
+MPLINK 5.08, LINKER
+Linker Map File - Created Tue Oct 31 17:39:13 2023
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000054
+                   .cinit    romdata   0x00002a    program   0x000004
+.config_2007_BUILD/DEFAULT/PRODUCTION/NEWASMT       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00002b      
+                            0x002007    0x002007      
+            45 out of 8454 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     LOOP   0x000007    program     static C:\Users\furkan\Desktop\mikro_lablar\ders_ornek_1.X\newAsmTemplate.asm
+                    START   0x000001    program     static C:\Users\furkan\Desktop\mikro_lablar\ders_ornek_1.X\newAsmTemplate.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    START   0x000001    program     static C:\Users\furkan\Desktop\mikro_lablar\ders_ornek_1.X\newAsmTemplate.asm
+                     LOOP   0x000007    program     static C:\Users\furkan\Desktop\mikro_lablar\ders_ornek_1.X\newAsmTemplate.asm
+
+
