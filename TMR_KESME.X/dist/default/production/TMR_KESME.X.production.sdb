@@ -1,0 +1,57 @@
+[p GLOBOPT AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"26 C:\Users\furkan\Desktop\mikro_lablar\TMR_KESME.X\TIMER_KESME_ORNEK.c
+[v _main main `(v  1 e 1 0 ]
+"55
+[v _kesme kesme `II(v  1 e 1 0 ]
+"59 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic16f877a.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"166
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"216
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"1325
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1375
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"2573
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"2639
+[v _PS0 PS0 `VEb  1 e 0 @1032 ]
+"2642
+[v _PS1 PS1 `VEb  1 e 0 @1033 ]
+"2645
+[v _PS2 PS2 `VEb  1 e 0 @1034 ]
+"2648
+[v _PSA PSA `VEb  1 e 0 @1035 ]
+"2849
+[v _T0CS T0CS `VEb  1 e 0 @1037 ]
+"2852
+[v _T0IE T0IE `VEb  1 e 0 @93 ]
+"2855
+[v _T0IF T0IF `VEb  1 e 0 @90 ]
+"2858
+[v _T0SE T0SE `VEb  1 e 0 @1036 ]
+"26 C:\Users\furkan\Desktop\mikro_lablar\TMR_KESME.X\TIMER_KESME_ORNEK.c
+[v _main main `(v  1 e 1 0 ]
+{
+"52
+} 0
+"55
+[v _kesme kesme `II(v  1 e 1 0 ]
+{
+"57
+[v kesme@i i `uc  1 a 1 3 ]
+"70
+} 0
