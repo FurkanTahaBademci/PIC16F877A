@@ -1,0 +1,26 @@
+[p GLOBOPT AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"22 C:\Users\furkan\Desktop\mikro_lablar\deneme_4.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"340 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic16f877a.h
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"1499
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"2753
+[v _RD0 RD0 `VEb  1 e 0 @64 ]
+"22 C:\Users\furkan\Desktop\mikro_lablar\deneme_4.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"34
+} 0
