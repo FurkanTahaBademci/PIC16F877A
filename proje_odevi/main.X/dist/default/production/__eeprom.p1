@@ -1,16 +1,45 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F38 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v2.45\pic\include\builtins.h
-[v __delay `JF38 ~T0 @X0 0 e ]
-[p i __delay ]
-"2681 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic16f877a.h
-[v _RB1 `Vb ~T0 @X0 0 e@49 ]
-"2678
-[v _RB0 `Vb ~T0 @X0 0 e@48 ]
-"2684
-[v _RB2 `Vb ~T0 @X0 0 e@50 ]
-"340
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"2322 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic16f877a.h
+[s S94 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S94 . RD WR WREN WRERR . EEPGD ]
+"2321
+[u S93 `S94 1 ]
+[n S93 . . ]
+"2331
+[v _EECON1bits `VS93 ~T0 @X0 0 e@396 ]
+"2295
+[v _EEADR `Vuc ~T0 @X0 0 e@269 ]
+"2316
+[v _EECON1 `Vuc ~T0 @X0 0 e@396 ]
+"2288
+[v _EEDATA `Vuc ~T0 @X0 0 e@268 ]
+"79
+[s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S2 . C DC Z nPD nTO RP IRP ]
+"88
+[s S3 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S3 . . RP0 RP1 ]
+"93
+[s S4 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S4 . CARRY . ZERO ]
+"78
+[u S1 `S2 1 `S3 1 `S4 1 ]
+[n S1 . . . . ]
+"99
+[v _STATUSbits `VS1 ~T0 @X0 0 e@3 ]
+"460
+[s S18 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S18 . RBIF INTF TMR0IF RBIE INTE TMR0IE PEIE GIE ]
+"470
+[s S19 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S19 . . T0IF . T0IE ]
+"459
+[u S17 `S18 1 `S19 1 ]
+[n S17 . . . ]
+"477
+[v _INTCONbits `VS17 ~T0 @X0 0 e@11 ]
+"2361
+[v _EECON2 `Vuc ~T0 @X0 0 e@397 ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -1055,257 +1084,554 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 118: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 119: extern __bank0 __bit __powerdown;
 [; ;pic.h: 120: extern __bank0 __bit __timeout;
-"14 LCD_library.h
-[p x FOSC=XT ]
-"15
-[p x WDTE=OFF ]
-"16
-[p x PWRTE=OFF ]
-"17
-[p x BOREN=ON ]
-"18
-[p x LVP=ON ]
-"19
-[p x CPD=OFF ]
-"20
-[p x WRT=OFF ]
-"21
-[p x CP=OFF ]
-[; ;LCD_library.h: 45: extern void bekle_milisaniye(unsigned int milisaniye);
-[; ;LCD_library.h: 46: extern void komut_gonder(unsigned char komut);
-[; ;LCD_library.h: 47: extern void ekran_temizle(void);
-[; ;LCD_library.h: 48: extern void metin_yaz(const char *metin);
-[; ;LCD_library.h: 49: extern void imleci_ayarla(unsigned char x, unsigned char y);
-[; ;LCD_library.h: 50: extern void kutuphaneyi_baslat(void);
-[; ;LCD_library.h: 51: extern void komut_calistir(unsigned char komut);
-"3 LCD_library.c
-[v _bekle_milisaniye `(v ~T0 @X0 1 ef1`ui ]
-{
-[; ;LCD_library.c: 3: void bekle_milisaniye(unsigned int milisaniye) {
-[e :U _bekle_milisaniye ]
-[v _milisaniye `ui ~T0 @X0 1 r1 ]
-[f ]
-[; ;LCD_library.c: 4: for (unsigned int i = 0; i < milisaniye; i++) {
-"4
-{
-[v _i `ui ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `ui ]
-[e $U 99  ]
-[e :U 96 ]
-{
-[; ;LCD_library.c: 5: _delay((unsigned long)((1)*(4000000/4000.0)));
-"5
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"6
-}
-"4
-[e ++ _i -> -> 1 `i `ui ]
-[e :U 99 ]
-[e $ < _i _milisaniye 96  ]
-[e :U 97 ]
-"6
-}
-[; ;LCD_library.c: 6: }
-[; ;LCD_library.c: 7: }
+"6 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem `(v ~T0 @X0 1 ef3`*Vuc`*Euc`uc ]
 "7
+{
+[; ;__eeprom.c: 5: void
+[; ;__eeprom.c: 6: __eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
+[; ;__eeprom.c: 7: {
+[e :U ___eecpymem ]
+"6
+[v _to `*Vuc ~T0 @X0 1 r1 ]
+[v _from `*Euc ~T0 @X0 1 r2 ]
+[v _size `uc ~T0 @X0 1 r3 ]
+"7
+[f ]
+"8
+[v _cp `*Vuc ~T0 @X0 1 a ]
+[; ;__eeprom.c: 8: volatile unsigned char *cp = to;
+[e = _cp _to ]
+[; ;__eeprom.c: 10: while (EECON1bits.WR) continue;
+"10
+[e $U 96  ]
+[e :U 97 ]
+[e $U 96  ]
+[e :U 96 ]
+[e $ != -> . . _EECON1bits 0 1 `i -> -> -> 0 `i `Vuc `i 97  ]
+[e :U 98 ]
+[; ;__eeprom.c: 11: EEADR = (unsigned char)from;
+"11
+[e = _EEADR -> _from `uc ]
+[; ;__eeprom.c: 12: while(size--) {
+"12
+[e $U 99  ]
+[e :U 100 ]
+{
+[; ;__eeprom.c: 13: while (EECON1bits.WR) continue;
+"13
+[e $U 102  ]
+[e :U 103 ]
+[e $U 102  ]
+[e :U 102 ]
+[e $ != -> . . _EECON1bits 0 1 `i -> -> -> 0 `i `Vuc `i 103  ]
+[e :U 104 ]
+[; ;__eeprom.c: 15: EECON1 &= 0x7F;
+"15
+[e =& _EECON1 -> -> 127 `i `uc ]
+[; ;__eeprom.c: 17: EECON1bits.RD = 1;
+"17
+[e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
+[; ;__eeprom.c: 18: *cp++ = EEDATA;
+"18
+[e = *U ++ _cp * -> -> 1 `i `x -> -> # *U _cp `i `x _EEDATA ]
+[; ;__eeprom.c: 19: ++EEADR;
+"19
+[e =+ _EEADR -> -> 1 `i `uc ]
+"20
+}
+[e :U 99 ]
+"12
+[e $ != -> -- _size -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 100  ]
+[e :U 101 ]
+[; ;__eeprom.c: 20: }
+[; ;__eeprom.c: 36: }
+"36
 [e :UE 95 ]
 }
-"9
-[v _komut_calistir `(v ~T0 @X0 1 ef1`uc ]
-{
-[; ;LCD_library.c: 9: void komut_calistir(unsigned char komut) {
-[e :U _komut_calistir ]
-[v _komut `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;LCD_library.c: 10: RB1 = 0;
-"10
-[e = _RB1 -> -> 0 `i `b ]
-[; ;LCD_library.c: 11: RB0 = 0;
-"11
-[e = _RB0 -> -> 0 `i `b ]
-[; ;LCD_library.c: 12: RB2 = 1;
-"12
-[e = _RB2 -> -> 1 `i `b ]
-[; ;LCD_library.c: 13: PORTD = (komut & 0xF0);
-"13
-[e = _PORTD -> & -> _komut `i -> 240 `i `uc ]
-[; ;LCD_library.c: 14: RB2 = 0;
-"14
-[e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 15: bekle_milisaniye(1);
-"15
-[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
-[; ;LCD_library.c: 16: RB2 = 1;
-"16
-[e = _RB2 -> -> 1 `i `b ]
-[; ;LCD_library.c: 17: PORTD = ((komut & 0x0F) << 4);
-"17
-[e = _PORTD -> << & -> _komut `i -> 15 `i -> 4 `i `uc ]
-[; ;LCD_library.c: 18: RB2 = 0;
-"18
-[e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 19: bekle_milisaniye(1);
-"19
-[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
-[; ;LCD_library.c: 20: }
-"20
-[e :UE 100 ]
-}
-"22
-[v _komut_gonder `(v ~T0 @X0 1 ef1`uc ]
-{
-[; ;LCD_library.c: 22: void komut_gonder(unsigned char komut) {
-[e :U _komut_gonder ]
-[v _komut `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;LCD_library.c: 23: komut_calistir(komut);
-"23
-[e ( _komut_calistir (1 _komut ]
-[; ;LCD_library.c: 24: }
-"24
-[e :UE 101 ]
-}
-"26
-[v _metin_yaz `(v ~T0 @X0 1 ef1`*Cuc ]
-{
-[; ;LCD_library.c: 26: void metin_yaz(const char *metin) {
-[e :U _metin_yaz ]
-[v _metin `*Cuc ~T0 @X0 1 r1 ]
-[f ]
-[; ;LCD_library.c: 27: bekle_milisaniye(1);
-"27
-[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
-[; ;LCD_library.c: 28: while (*metin) {
-"28
-[e $U 103  ]
-[e :U 104 ]
-{
-[; ;LCD_library.c: 29: RB0 = 1;
-"29
-[e = _RB0 -> -> 1 `i `b ]
-[; ;LCD_library.c: 30: RB2 = 1;
-"30
-[e = _RB2 -> -> 1 `i `b ]
-[; ;LCD_library.c: 31: PORTD = (*metin & 0xF0);
-"31
-[e = _PORTD -> & -> *U _metin `i -> 240 `i `uc ]
-[; ;LCD_library.c: 32: RB2 = 0;
-"32
-[e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 33: bekle_milisaniye(1);
-"33
-[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
-[; ;LCD_library.c: 34: RB2 = 1;
-"34
-[e = _RB2 -> -> 1 `i `b ]
-[; ;LCD_library.c: 35: PORTD = ((*metin & 0x0F) << 4);
-"35
-[e = _PORTD -> << & -> *U _metin `i -> 15 `i -> 4 `i `uc ]
-[; ;LCD_library.c: 36: RB2 = 0;
-"36
-[e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 37: bekle_milisaniye(1);
-"37
-[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
-[; ;LCD_library.c: 38: metin++;
-"38
-[e ++ _metin * -> -> 1 `i `x -> -> # *U _metin `i `x ]
 "39
-}
-[e :U 103 ]
-"28
-[e $ != -> *U _metin `i -> -> -> 0 `i `Cuc `i 104  ]
-[e :U 105 ]
-[; ;LCD_library.c: 39: }
-[; ;LCD_library.c: 40: }
+[v ___memcpyee `(v ~T0 @X0 1 ef3`*Euc`*Cuc`uc ]
 "40
-[e :UE 102 ]
-}
-"42
-[v _ekran_temizle `(v ~T0 @X0 1 ef ]
 {
-[; ;LCD_library.c: 42: void ekran_temizle(void) {
-[e :U _ekran_temizle ]
+[; ;__eeprom.c: 38: void
+[; ;__eeprom.c: 39: __memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
+[; ;__eeprom.c: 40: {
+[e :U ___memcpyee ]
+"39
+[v _to `*Euc ~T0 @X0 1 r1 ]
+[v _from `*Cuc ~T0 @X0 1 r2 ]
+[v _size `uc ~T0 @X0 1 r3 ]
+"40
 [f ]
-[; ;LCD_library.c: 43: komut_gonder(1);
+"41
+[v _ptr `*Cuc ~T0 @X0 1 a ]
+[; ;__eeprom.c: 41: const unsigned char *ptr =from;
+[e = _ptr _from ]
+[; ;__eeprom.c: 43: while (EECON1bits.WR) continue;
 "43
-[e ( _komut_gonder (1 -> -> 1 `i `uc ]
-[; ;LCD_library.c: 44: bekle_milisaniye(2);
-"44
-[e ( _bekle_milisaniye (1 -> -> 2 `i `ui ]
-[; ;LCD_library.c: 45: }
-"45
-[e :UE 106 ]
-}
-"47
-[v _imleci_ayarla `(v ~T0 @X0 1 ef2`uc`uc ]
-{
-[; ;LCD_library.c: 47: void imleci_ayarla(unsigned char x, unsigned char y) {
-[e :U _imleci_ayarla ]
-[v _x `uc ~T0 @X0 1 r1 ]
-[v _y `uc ~T0 @X0 1 r2 ]
-[f ]
-[; ;LCD_library.c: 48: if (x == 1)
-"48
-[e $ ! == -> _x `i -> 1 `i 108  ]
-[; ;LCD_library.c: 49: komut_gonder(128 + ((y - 1) % 16));
-"49
-[e ( _komut_gonder (1 -> + -> 128 `i % - -> _y `i -> 1 `i -> 16 `i `uc ]
-[e $U 109  ]
-"50
+[e $U 106  ]
+[e :U 107 ]
+[e $U 106  ]
+[e :U 106 ]
+[e $ != -> . . _EECON1bits 0 1 `i -> -> -> 0 `i `Vuc `i 107  ]
 [e :U 108 ]
-[; ;LCD_library.c: 50: else
-[; ;LCD_library.c: 51: komut_gonder(192 + ((y - 1) % 16));
-"51
-[e ( _komut_gonder (1 -> + -> 192 `i % - -> _y `i -> 1 `i -> 16 `i `uc ]
-[e :U 109 ]
-[; ;LCD_library.c: 52: }
-"52
-[e :UE 107 ]
-}
-"54
-[v _kutuphaneyi_baslat `(v ~T0 @X0 1 ef ]
+[; ;__eeprom.c: 44: EEADR = (unsigned char)to - 1U;
+"44
+[e = _EEADR -> - -> -> _to `uc `ui -> 1 `ui `uc ]
+[; ;__eeprom.c: 46: EECON1 &= 0x7F;
+"46
+[e =& _EECON1 -> -> 127 `i `uc ]
+[; ;__eeprom.c: 48: while(size--) {
+"48
+[e $U 109  ]
+[e :U 110 ]
 {
-[; ;LCD_library.c: 54: void kutuphaneyi_baslat(void) {
-[e :U _kutuphaneyi_baslat ]
-[f ]
-[; ;LCD_library.c: 55: RB0 = 0;
+[; ;__eeprom.c: 49: while (EECON1bits.WR) {
+"49
+[e $U 112  ]
+[e :U 113 ]
+{
+[; ;__eeprom.c: 50: continue;
+"50
+[e $U 112  ]
+"51
+}
+[e :U 112 ]
+"49
+[e $ != -> . . _EECON1bits 0 1 `i -> -> -> 0 `i `Vuc `i 113  ]
+[e :U 114 ]
+[; ;__eeprom.c: 51: }
+[; ;__eeprom.c: 52: EEDATA = *ptr++;
+"52
+[e = _EEDATA *U ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x ]
+[; ;__eeprom.c: 53: ++EEADR;
+"53
+[e =+ _EEADR -> -> 1 `i `uc ]
+[; ;__eeprom.c: 54: STATUSbits.CARRY = 0;
+"54
+[e = . . _STATUSbits 2 0 -> -> 0 `i `uc ]
+[; ;__eeprom.c: 55: if (INTCONbits.GIE) {
 "55
-[e = _RB0 -> -> 0 `i `b ]
-[; ;LCD_library.c: 56: RB2 = 0;
+[e $ ! != -> . . _INTCONbits 0 7 `i -> -> -> 0 `i `Vuc `i 115  ]
+{
+[; ;__eeprom.c: 56: STATUSbits.CARRY = 1;
 "56
-[e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 57: RB1 = 0;
+[e = . . _STATUSbits 2 0 -> -> 1 `i `uc ]
 "57
-[e = _RB1 -> -> 0 `i `b ]
-[; ;LCD_library.c: 58: bekle_milisaniye(15);
+}
+[e :U 115 ]
+[; ;__eeprom.c: 57: }
+[; ;__eeprom.c: 58: INTCONbits.GIE = 0;
 "58
-[e ( _bekle_milisaniye (1 -> -> 15 `i `ui ]
-[; ;LCD_library.c: 59: RB2 = 1;
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
+[; ;__eeprom.c: 59: EECON1bits.WREN = 1;
 "59
-[e = _RB2 -> -> 1 `i `b ]
-[; ;LCD_library.c: 60: komut_calistir(2);
+[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
+[; ;__eeprom.c: 60: EECON2 = 0x55;
 "60
-[e ( _komut_calistir (1 -> -> 2 `i `uc ]
-[; ;LCD_library.c: 61: bekle_milisaniye(2);
+[e = _EECON2 -> -> 85 `i `uc ]
+[; ;__eeprom.c: 61: EECON2 = 0xAA;
 "61
-[e ( _bekle_milisaniye (1 -> -> 2 `i `ui ]
-[; ;LCD_library.c: 62: komut_calistir(40);
+[e = _EECON2 -> -> 170 `i `uc ]
+[; ;__eeprom.c: 62: EECON1bits.WR = 1;
 "62
-[e ( _komut_calistir (1 -> -> 40 `i `uc ]
-[; ;LCD_library.c: 63: komut_calistir(4);
+[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
+[; ;__eeprom.c: 63: EECON1bits.WREN = 0;
 "63
-[e ( _komut_calistir (1 -> -> 4 `i `uc ]
-[; ;LCD_library.c: 64: komut_calistir(12);
+[e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
+[; ;__eeprom.c: 64: if (STATUSbits.CARRY) {
 "64
-[e ( _komut_calistir (1 -> -> 12 `i `uc ]
-[; ;LCD_library.c: 65: ekran_temizle();
+[e $ ! != -> . . _STATUSbits 2 0 `i -> -> -> 0 `i `Vuc `i 116  ]
+{
+[; ;__eeprom.c: 65: INTCONbits.GIE = 1;
 "65
-[e ( _ekran_temizle ..  ]
-[; ;LCD_library.c: 66: komut_calistir(128);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "66
-[e ( _komut_calistir (1 -> -> 128 `i `uc ]
-[; ;LCD_library.c: 67: }
+}
+[e :U 116 ]
 "67
-[e :UE 110 ]
+}
+[e :U 109 ]
+"48
+[e $ != -> -- _size -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 110  ]
+[e :U 111 ]
+[; ;__eeprom.c: 66: }
+[; ;__eeprom.c: 67: }
+[; ;__eeprom.c: 101: }
+"101
+[e :UE 105 ]
+}
+"104
+[v ___eetoc `(uc ~T0 @X0 1 ef1`*Ev ]
+"105
+{
+[; ;__eeprom.c: 103: unsigned char
+[; ;__eeprom.c: 104: __eetoc(__eeprom void *addr)
+[; ;__eeprom.c: 105: {
+[e :U ___eetoc ]
+"104
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"105
+[f ]
+"106
+[v _data `uc ~T0 @X0 1 a ]
+[; ;__eeprom.c: 106: unsigned char data;
+[; ;__eeprom.c: 107: __eecpymem((unsigned char *) &data,addr,1);
+"107
+[e ( ___eecpymem (3 , , -> &U _data `*Vuc -> _addr `*Euc -> -> 1 `i `uc ]
+[; ;__eeprom.c: 108: return data;
+"108
+[e ) _data ]
+[e $UE 117  ]
+[; ;__eeprom.c: 109: }
+"109
+[e :UE 117 ]
+}
+"112
+[v ___eetoi `(ui ~T0 @X0 1 ef1`*Ev ]
+"113
+{
+[; ;__eeprom.c: 111: unsigned int
+[; ;__eeprom.c: 112: __eetoi(__eeprom void *addr)
+[; ;__eeprom.c: 113: {
+[e :U ___eetoi ]
+"112
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"113
+[f ]
+"114
+[v _data `ui ~T0 @X0 1 a ]
+[; ;__eeprom.c: 114: unsigned int data;
+[; ;__eeprom.c: 115: __eecpymem((unsigned char *) &data,addr,2);
+"115
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 2 `i `uc ]
+[; ;__eeprom.c: 116: return data;
+"116
+[e ) _data ]
+[e $UE 118  ]
+[; ;__eeprom.c: 117: }
+"117
+[e :UE 118 ]
+}
+"119
+[p k ]
+"120
+[p n 2040 ]
+"122
+[v ___eetom `(um ~T0 @X0 1 ef1`*Ev ]
+"123
+{
+[; ;__eeprom.c: 121: __uint24
+[; ;__eeprom.c: 122: __eetom(__eeprom void *addr)
+[; ;__eeprom.c: 123: {
+[e :U ___eetom ]
+"122
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"123
+[f ]
+"124
+[v _data `um ~T0 @X0 1 a ]
+[; ;__eeprom.c: 124: __uint24 data;
+[; ;__eeprom.c: 125: __eecpymem((unsigned char *) &data,addr,3);
+"125
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 3 `i `uc ]
+[; ;__eeprom.c: 126: return data;
+"126
+[e ) _data ]
+[e $UE 119  ]
+[; ;__eeprom.c: 127: }
+"127
+[e :UE 119 ]
+}
+"128
+[p o ]
+"131
+[v ___eetol `(ul ~T0 @X0 1 ef1`*Ev ]
+"132
+{
+[; ;__eeprom.c: 130: unsigned long
+[; ;__eeprom.c: 131: __eetol(__eeprom void *addr)
+[; ;__eeprom.c: 132: {
+[e :U ___eetol ]
+"131
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"132
+[f ]
+"133
+[v _data `ul ~T0 @X0 1 a ]
+[; ;__eeprom.c: 133: unsigned long data;
+[; ;__eeprom.c: 134: __eecpymem((unsigned char *) &data,addr,4);
+"134
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 4 `i `uc ]
+[; ;__eeprom.c: 135: return data;
+"135
+[e ) _data ]
+[e $UE 120  ]
+[; ;__eeprom.c: 136: }
+"136
+[e :UE 120 ]
+}
+"138
+[p k ]
+"139
+[p n 1516 ]
+"141
+[v ___eetoo `(ul ~T0 @X0 1 ef1`*Ev ]
+"142
+{
+[; ;__eeprom.c: 140: unsigned long long
+[; ;__eeprom.c: 141: __eetoo(__eeprom void *addr)
+[; ;__eeprom.c: 142: {
+[e :U ___eetoo ]
+"141
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"142
+[f ]
+"143
+[v _data `ul ~T0 @X0 1 a ]
+[; ;__eeprom.c: 143: unsigned long long data;
+[; ;__eeprom.c: 144: __eecpymem((unsigned char *) &data,addr,8);
+"144
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 8 `i `uc ]
+[; ;__eeprom.c: 145: return data;
+"145
+[e ) _data ]
+[e $UE 121  ]
+[; ;__eeprom.c: 146: }
+"146
+[e :UE 121 ]
+}
+"147
+[p o ]
+"150
+[v ___ctoee `(uc ~T0 @X0 1 ef2`*Ev`uc ]
+"151
+{
+[; ;__eeprom.c: 149: unsigned char
+[; ;__eeprom.c: 150: __ctoee(__eeprom void *addr, unsigned char data)
+[; ;__eeprom.c: 151: {
+[e :U ___ctoee ]
+"150
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `uc ~T0 @X0 1 r2 ]
+"151
+[f ]
+[; ;__eeprom.c: 152: __memcpyee(addr,(unsigned char *) &data,1);
+"152
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> &U _data `*Cuc -> -> 1 `i `uc ]
+[; ;__eeprom.c: 153: return data;
+"153
+[e ) _data ]
+[e $UE 122  ]
+[; ;__eeprom.c: 154: }
+"154
+[e :UE 122 ]
+}
+"157
+[v ___itoee `(ui ~T0 @X0 1 ef2`*Ev`ui ]
+"158
+{
+[; ;__eeprom.c: 156: unsigned int
+[; ;__eeprom.c: 157: __itoee(__eeprom void *addr, unsigned int data)
+[; ;__eeprom.c: 158: {
+[e :U ___itoee ]
+"157
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `ui ~T0 @X0 1 r2 ]
+"158
+[f ]
+[; ;__eeprom.c: 159: __memcpyee(addr,(unsigned char *) &data,2);
+"159
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 2 `i `uc ]
+[; ;__eeprom.c: 160: return data;
+"160
+[e ) _data ]
+[e $UE 123  ]
+[; ;__eeprom.c: 161: }
+"161
+[e :UE 123 ]
+}
+"163
+[p k ]
+"164
+[p n 2040 ]
+"166
+[v ___mtoee `(um ~T0 @X0 1 ef2`*Ev`um ]
+"167
+{
+[; ;__eeprom.c: 165: __uint24
+[; ;__eeprom.c: 166: __mtoee(__eeprom void *addr, __uint24 data)
+[; ;__eeprom.c: 167: {
+[e :U ___mtoee ]
+"166
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `um ~T0 @X0 1 r2 ]
+"167
+[f ]
+[; ;__eeprom.c: 168: __memcpyee(addr,(unsigned char *) &data,3);
+"168
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 3 `i `uc ]
+[; ;__eeprom.c: 169: return data;
+"169
+[e ) _data ]
+[e $UE 124  ]
+[; ;__eeprom.c: 170: }
+"170
+[e :UE 124 ]
+}
+"171
+[p o ]
+"174
+[v ___ltoee `(ul ~T0 @X0 1 ef2`*Ev`ul ]
+"175
+{
+[; ;__eeprom.c: 173: unsigned long
+[; ;__eeprom.c: 174: __ltoee(__eeprom void *addr, unsigned long data)
+[; ;__eeprom.c: 175: {
+[e :U ___ltoee ]
+"174
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `ul ~T0 @X0 1 r2 ]
+"175
+[f ]
+[; ;__eeprom.c: 176: __memcpyee(addr,(unsigned char *) &data,4);
+"176
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 4 `i `uc ]
+[; ;__eeprom.c: 177: return data;
+"177
+[e ) _data ]
+[e $UE 125  ]
+[; ;__eeprom.c: 178: }
+"178
+[e :UE 125 ]
+}
+"180
+[p k ]
+"181
+[p n 1516 ]
+"183
+[v ___otoee `(ul ~T0 @X0 1 ef2`*Ev`ul ]
+"184
+{
+[; ;__eeprom.c: 182: unsigned long long
+[; ;__eeprom.c: 183: __otoee(__eeprom void *addr, unsigned long long data)
+[; ;__eeprom.c: 184: {
+[e :U ___otoee ]
+"183
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `ul ~T0 @X0 1 r2 ]
+"184
+[f ]
+[; ;__eeprom.c: 185: __memcpyee(addr,(unsigned char *) &data,8);
+"185
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 8 `i `uc ]
+[; ;__eeprom.c: 186: return data;
+"186
+[e ) _data ]
+[e $UE 126  ]
+[; ;__eeprom.c: 187: }
+"187
+[e :UE 126 ]
+}
+"188
+[p o ]
+"191
+[v ___eetoft `(f ~T0 @X0 1 ef1`*Ev ]
+"192
+{
+[; ;__eeprom.c: 190: float
+[; ;__eeprom.c: 191: __eetoft(__eeprom void *addr)
+[; ;__eeprom.c: 192: {
+[e :U ___eetoft ]
+"191
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"192
+[f ]
+"193
+[v _data `f ~T0 @X0 1 a ]
+[; ;__eeprom.c: 193: float data;
+[; ;__eeprom.c: 194: __eecpymem((unsigned char *) &data,addr,3);
+"194
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 3 `i `uc ]
+[; ;__eeprom.c: 195: return data;
+"195
+[e ) _data ]
+[e $UE 127  ]
+[; ;__eeprom.c: 196: }
+"196
+[e :UE 127 ]
+}
+"199
+[v ___eetofl `(d ~T0 @X0 1 ef1`*Ev ]
+"200
+{
+[; ;__eeprom.c: 198: double
+[; ;__eeprom.c: 199: __eetofl(__eeprom void *addr)
+[; ;__eeprom.c: 200: {
+[e :U ___eetofl ]
+"199
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+"200
+[f ]
+"201
+[v _data `d ~T0 @X0 1 a ]
+[; ;__eeprom.c: 201: double data;
+[; ;__eeprom.c: 202: __eecpymem((unsigned char *) &data,addr,4);
+"202
+[e ( ___eecpymem (3 , , -> -> &U _data `*uc `*Vuc -> _addr `*Euc -> -> 4 `i `uc ]
+[; ;__eeprom.c: 203: return data;
+"203
+[e ) _data ]
+[e $UE 128  ]
+[; ;__eeprom.c: 204: }
+"204
+[e :UE 128 ]
+}
+"207
+[v ___fttoee `(f ~T0 @X0 1 ef2`*Ev`f ]
+"208
+{
+[; ;__eeprom.c: 206: float
+[; ;__eeprom.c: 207: __fttoee(__eeprom void *addr, float data)
+[; ;__eeprom.c: 208: {
+[e :U ___fttoee ]
+"207
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `f ~T0 @X0 1 r2 ]
+"208
+[f ]
+[; ;__eeprom.c: 209: __memcpyee(addr,(unsigned char *) &data,3);
+"209
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 3 `i `uc ]
+[; ;__eeprom.c: 210: return data;
+"210
+[e ) _data ]
+[e $UE 129  ]
+[; ;__eeprom.c: 211: }
+"211
+[e :UE 129 ]
+}
+"214
+[v ___fltoee `(d ~T0 @X0 1 ef2`*Ev`d ]
+"215
+{
+[; ;__eeprom.c: 213: double
+[; ;__eeprom.c: 214: __fltoee(__eeprom void *addr, double data)
+[; ;__eeprom.c: 215: {
+[e :U ___fltoee ]
+"214
+[v _addr `*Ev ~T0 @X0 1 r1 ]
+[v _data `d ~T0 @X0 1 r2 ]
+"215
+[f ]
+[; ;__eeprom.c: 216: __memcpyee(addr,(unsigned char *) &data,4);
+"216
+[e ( ___memcpyee (3 , , -> _addr `*Euc -> -> &U _data `*uc `*Cuc -> -> 4 `i `uc ]
+[; ;__eeprom.c: 217: return data;
+"217
+[e ) _data ]
+[e $UE 130  ]
+[; ;__eeprom.c: 218: }
+"218
+[e :UE 130 ]
 }

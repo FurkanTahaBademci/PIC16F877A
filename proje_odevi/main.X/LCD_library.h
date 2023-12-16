@@ -1,12 +1,13 @@
 /* 
- * Dosya:   LCD_kutuphane.h
- * Yazar:   DELL
+ * File:   LCD_library.h
+ * Author: furkan
  *
- * Olu?turulma Tarihi: 01 Ocak 2021 Cuma, 14:27
+ * Created on 16 Aral?k 2023 Cumartesi, 20:03
  */
 
-#ifndef LCD_KUTUPHANE_H
-#define LCD_KUTUPHANE_H
+#ifndef LCD_LIBRARY_H
+#define	LCD_LIBRARY_H
+
 
 #include <xc.h>
 
@@ -21,7 +22,7 @@
 
 #define _XTAL_FREQ 4000000
 #define RS  RB0 
-#define RW  RB1 
+#define RW  RB1
 #define E   RB2
 #define LCD_PORT PORTD
 #define EKRANI_TEMIZLE 1
@@ -49,4 +50,13 @@ extern void imleci_ayarla(unsigned char x, unsigned char y);
 extern void kutuphaneyi_baslat(void);
 extern void komut_calistir(unsigned char komut);
 
-#endif // LCD_KUTUPHANE_H
+#ifdef	__cplusplus
+extern "C" {
+#endif
+
+#ifdef	__cplusplus
+}
+#endif
+
+#endif	/* LCD_LIBRARY_H */
+

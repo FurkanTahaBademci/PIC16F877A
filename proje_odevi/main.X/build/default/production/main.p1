@@ -1,16 +1,71 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"1159 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic16f877a.h
+[v _ADCON0 `Vuc ~T0 @X0 0 e@31 ]
 [v F38 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v2.45\pic\include\builtins.h
 [v __delay `JF38 ~T0 @X0 0 e ]
 [p i __delay ]
-"2681 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic16f877a.h
-[v _RB1 `Vb ~T0 @X0 0 e@49 ]
-"2678
-[v _RB0 `Vb ~T0 @X0 0 e@48 ]
-"2684
-[v _RB2 `Vb ~T0 @X0 0 e@50 ]
+"2582 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic16f877a.h
+[v _GO_nDONE `Vb ~T0 @X0 0 e@250 ]
+"1152
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"2222
+[v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
+[p mainexit ]
+"1325
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"1375
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"1437
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"1499
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"278
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"216
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "340
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"737
+[v _T2CON `Vuc ~T0 @X0 0 e@18 ]
+"906
+[v _CCP1CON `Vuc ~T0 @X0 0 e@23 ]
+"2229
+[v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
+"730
+[v _TMR2 `Vuc ~T0 @X0 0 e@17 ]
+"1816
+[v _PR2 `Vuc ~T0 @X0 0 e@146 ]
+"50 ../main.X/LCD_library.h
+[v _kutuphaneyi_baslat `(v ~T0 @X0 0 ef ]
+"47
+[v _ekran_temizle `(v ~T0 @X0 0 ef ]
+"48
+[v _metin_yaz `(v ~T0 @X0 0 ef1`*Cuc ]
+"49
+[v _imleci_ayarla `(v ~T0 @X0 0 ef2`uc`uc ]
+"45
+[v _bekle_milisaniye `(v ~T0 @X0 0 ef1`ui ]
+"2696 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic16f877a.h
+[v _RB6 `Vb ~T0 @X0 0 e@54 ]
+"2717
+[v _RC3 `Vb ~T0 @X0 0 e@59 ]
+"2723
+[v _RC5 `Vb ~T0 @X0 0 e@61 ]
+"2699
+[v _RB7 `Vb ~T0 @X0 0 e@55 ]
+"2720
+[v _RC4 `Vb ~T0 @X0 0 e@60 ]
+"2726
+[v _RC6 `Vb ~T0 @X0 0 e@62 ]
+"892
+[v _CCPR1L `Vuc ~T0 @X0 0 e@21 ]
+"2456
+[v _CCP1X `Vb ~T0 @X0 0 e@189 ]
+"2459
+[v _CCP1Y `Vb ~T0 @X0 0 e@188 ]
+"46 ../main.X/LCD_library.h
+[v _komut_gonder `(v ~T0 @X0 0 ef1`uc ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -1055,7 +1110,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 118: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 119: extern __bank0 __bit __powerdown;
 [; ;pic.h: 120: extern __bank0 __bit __timeout;
-"14 LCD_library.h
+"14 ../main.X/LCD_library.h
 [p x FOSC=XT ]
 "15
 [p x WDTE=OFF ]
@@ -1078,234 +1133,258 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;LCD_library.h: 49: extern void imleci_ayarla(unsigned char x, unsigned char y);
 [; ;LCD_library.h: 50: extern void kutuphaneyi_baslat(void);
 [; ;LCD_library.h: 51: extern void komut_calistir(unsigned char komut);
-"3 LCD_library.c
-[v _bekle_milisaniye `(v ~T0 @X0 1 ef1`ui ]
-{
-[; ;LCD_library.c: 3: void bekle_milisaniye(unsigned int milisaniye) {
-[e :U _bekle_milisaniye ]
-[v _milisaniye `ui ~T0 @X0 1 r1 ]
-[f ]
-[; ;LCD_library.c: 4: for (unsigned int i = 0; i < milisaniye; i++) {
-"4
-{
-[v _i `ui ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `ui ]
-[e $U 99  ]
-[e :U 96 ]
-{
-[; ;LCD_library.c: 5: _delay((unsigned long)((1)*(4000000/4000.0)));
+"4 main.c
+[v _oran `Cf ~T0 @X0 1 e ]
+[i _oran
+-> / .5.0 .1024.0 `f
+]
+[; ;main.c: 4: const float oran = 5.0 / 1024.0;
 "5
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[v _adc_deger_okuma `(ui ~T0 @X0 1 ef1`uc ]
 "6
-}
-"4
-[e ++ _i -> -> 1 `i `ui ]
-[e :U 99 ]
-[e $ < _i _milisaniye 96  ]
-[e :U 97 ]
+{
+[; ;main.c: 5: unsigned int adc_deger_okuma(unsigned char kanal)
+[; ;main.c: 6: {
+[e :U _adc_deger_okuma ]
+"5
+[v _kanal `uc ~T0 @X0 1 r1 ]
 "6
-}
-[; ;LCD_library.c: 6: }
-[; ;LCD_library.c: 7: }
+[f ]
+[; ;main.c: 7: if (kanal > 7)
 "7
+[e $ ! > -> _kanal `i -> 7 `i 96  ]
+[; ;main.c: 8: return 0;
+"8
+[e ) -> -> 0 `i `ui ]
+[e $UE 95  ]
+[e :U 96 ]
+[; ;main.c: 9: ADCON0 &= 0xB11000101;
+"9
+[e =& _ADCON0 -> -> 47529853185 `ul `uc ]
+[; ;main.c: 10: ADCON0 |= (kanal << 3);
+"10
+[e =| _ADCON0 -> << -> _kanal `i -> 3 `i `uc ]
+[; ;main.c: 11: _delay((unsigned long)((2)*(4000000/4000.0)));
+"11
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 12: GO_nDONE = 1;
+"12
+[e = _GO_nDONE -> -> 1 `i `b ]
+[; ;main.c: 13: while (GO_nDONE)
+"13
+[e $U 97  ]
+[e :U 98 ]
+[; ;main.c: 14: ;
+"14
+[e :U 97 ]
+"13
+[e $ _GO_nDONE 98  ]
+[e :U 99 ]
+[; ;main.c: 15: return ((ADRESH << 8) + ADRESL);
+"15
+[e ) -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+[e $UE 95  ]
+[; ;main.c: 16: }
+"16
 [e :UE 95 ]
 }
-"9
-[v _komut_calistir `(v ~T0 @X0 1 ef1`uc ]
-{
-[; ;LCD_library.c: 9: void komut_calistir(unsigned char komut) {
-[e :U _komut_calistir ]
-[v _komut `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;LCD_library.c: 10: RB1 = 0;
-"10
-[e = _RB1 -> -> 0 `i `b ]
-[; ;LCD_library.c: 11: RB0 = 0;
-"11
-[e = _RB0 -> -> 0 `i `b ]
-[; ;LCD_library.c: 12: RB2 = 1;
-"12
-[e = _RB2 -> -> 1 `i `b ]
-[; ;LCD_library.c: 13: PORTD = (komut & 0xF0);
-"13
-[e = _PORTD -> & -> _komut `i -> 240 `i `uc ]
-[; ;LCD_library.c: 14: RB2 = 0;
-"14
-[e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 15: bekle_milisaniye(1);
-"15
-[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
-[; ;LCD_library.c: 16: RB2 = 1;
-"16
-[e = _RB2 -> -> 1 `i `b ]
-[; ;LCD_library.c: 17: PORTD = ((komut & 0x0F) << 4);
-"17
-[e = _PORTD -> << & -> _komut `i -> 15 `i -> 4 `i `uc ]
-[; ;LCD_library.c: 18: RB2 = 0;
+[v $root$_main `(v ~T0 @X0 0 e ]
 "18
-[e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 19: bekle_milisaniye(1);
+[v _main `(v ~T0 @X0 1 ef ]
 "19
-[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
-[; ;LCD_library.c: 20: }
+{
+[; ;main.c: 18: void main()
+[; ;main.c: 19: {
+[e :U _main ]
+[f ]
 "20
+[v _V `ui ~T0 @X0 1 a ]
+[; ;main.c: 20: unsigned int V;
+[; ;main.c: 21: TRISA = 1;
+"21
+[e = _TRISA -> -> 1 `i `uc ]
+[; ;main.c: 22: TRISB = 0B11000000;
+"22
+[e = _TRISB -> -> 192 `i `uc ]
+[; ;main.c: 23: TRISC = 0;
+"23
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;main.c: 24: TRISD = 0;
+"24
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;main.c: 25: PORTC = 0;
+"25
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;main.c: 26: PORTB = 0;
+"26
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 27: PORTD = 0;
+"27
+[e = _PORTD -> -> 0 `i `uc ]
+[; ;main.c: 29: T2CON = 0B00000101;
+"29
+[e = _T2CON -> -> 5 `i `uc ]
+[; ;main.c: 30: CCP1CON = 0B00001111;
+"30
+[e = _CCP1CON -> -> 15 `i `uc ]
+[; ;main.c: 31: ADCON0 = 0B00000001;
+"31
+[e = _ADCON0 -> -> 1 `i `uc ]
+[; ;main.c: 32: ADCON1 = 0B10000000;
+"32
+[e = _ADCON1 -> -> 128 `i `uc ]
+[; ;main.c: 33: TMR2 = 0;
+"33
+[e = _TMR2 -> -> 0 `i `uc ]
+[; ;main.c: 34: PR2 = 255;
+"34
+[e = _PR2 -> -> 255 `i `uc ]
+[; ;main.c: 36: kutuphaneyi_baslat();
+"36
+[e ( _kutuphaneyi_baslat ..  ]
+[; ;main.c: 37: ekran_temizle();
+"37
+[e ( _ekran_temizle ..  ]
+[; ;main.c: 38: metin_yaz("Furkan T.Bademci");
+"38
+[e ( _metin_yaz (1 :s 1C ]
+[; ;main.c: 39: imleci_ayarla(2, 1);
+"39
+[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 40: metin_yaz("G210104016");
+"40
+[e ( _metin_yaz (1 :s 2C ]
+[; ;main.c: 41: bekle_milisaniye(1000);
+"41
+[e ( _bekle_milisaniye (1 -> -> 1000 `i `ui ]
+[; ;main.c: 42: ekran_temizle();
+"42
+[e ( _ekran_temizle ..  ]
+[; ;main.c: 44: while (1)
+"44
+[e :U 102 ]
+[; ;main.c: 45: {
+"45
+{
+[; ;main.c: 46: if (RB6 == 1)
+"46
+[e $ ! == -> _RB6 `i -> 1 `i 104  ]
+[; ;main.c: 47: {
+"47
+{
+[; ;main.c: 48: RC3 = 1;
+"48
+[e = _RC3 -> -> 1 `i `b ]
+[; ;main.c: 49: RC5 = 1;
+"49
+[e = _RC5 -> -> 1 `i `b ]
+[; ;main.c: 50: imleci_ayarla(2, 6);
+"50
+[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
+[; ;main.c: 51: metin_yaz("YON:SAG");
+"51
+[e ( _metin_yaz (1 :s 3C ]
+"52
+}
+[e :U 104 ]
+[; ;main.c: 52: }
+[; ;main.c: 53: if (RB6 == 0)
+"53
+[e $ ! == -> _RB6 `i -> 0 `i 105  ]
+[; ;main.c: 54: {
+"54
+{
+[; ;main.c: 55: RC3 = 0;
+"55
+[e = _RC3 -> -> 0 `i `b ]
+[; ;main.c: 56: RC5 = 0;
+"56
+[e = _RC5 -> -> 0 `i `b ]
+"57
+}
+[e :U 105 ]
+[; ;main.c: 57: }
+[; ;main.c: 58: if (RB7 == 1)
+"58
+[e $ ! == -> _RB7 `i -> 1 `i 106  ]
+[; ;main.c: 59: {
+"59
+{
+[; ;main.c: 60: RC4 = 1;
+"60
+[e = _RC4 -> -> 1 `i `b ]
+[; ;main.c: 61: RC6 = 1;
+"61
+[e = _RC6 -> -> 1 `i `b ]
+[; ;main.c: 62: imleci_ayarla(2, 6);
+"62
+[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
+[; ;main.c: 63: metin_yaz("YON:SOL");
+"63
+[e ( _metin_yaz (1 :s 4C ]
+"64
+}
+[e :U 106 ]
+[; ;main.c: 64: }
+[; ;main.c: 65: if (RB7 == 0)
+"65
+[e $ ! == -> _RB7 `i -> 0 `i 107  ]
+[; ;main.c: 66: {
+"66
+{
+[; ;main.c: 67: RC4 = 0;
+"67
+[e = _RC4 -> -> 0 `i `b ]
+[; ;main.c: 68: RC6 = 0;
+"68
+[e = _RC6 -> -> 0 `i `b ]
+"69
+}
+[e :U 107 ]
+"70
+}
+[e :U 101 ]
+"44
+[e $U 102  ]
+[e :U 103 ]
+[; ;main.c: 69: }
+[; ;main.c: 70: }
+[; ;main.c: 71: V = adc_deger_okuma(0);
+"71
+[e = _V ( _adc_deger_okuma (1 -> -> 0 `i `uc ]
+[; ;main.c: 72: CCPR1L = V >> 2;
+"72
+[e = _CCPR1L -> >> _V -> 2 `i `uc ]
+[; ;main.c: 73: CCP1X = V & 1;
+"73
+[e = _CCP1X -> & _V -> -> 1 `i `ui `b ]
+[; ;main.c: 74: CCP1Y = V & 2;
+"74
+[e = _CCP1Y -> & _V -> -> 2 `i `ui `b ]
+[; ;main.c: 75: _delay((unsigned long)((1000)*(4000000/4000.0)));
+"75
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 77: V = (int)((((ADRESH * 256) + ADRESL) * oran) / 5) * 100;
+"77
+[e = _V -> * -> / * -> + * -> _ADRESH `i -> 256 `i -> _ADRESL `i `f _oran -> -> 5 `i `f `i -> 100 `i `ui ]
+[; ;main.c: 78: imleci_ayarla(1, 6);
+"78
+[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 6 `i `uc ]
+[; ;main.c: 79: metin_yaz("HIZ:");
+"79
+[e ( _metin_yaz (1 :s 5C ]
+[; ;main.c: 80: komut_gonder(V % 100 / 10 + 48);
+"80
+[e ( _komut_gonder (1 -> + / % _V -> -> 100 `i `ui -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
+[; ;main.c: 81: komut_gonder(V % 10 + 48);
+"81
+[e ( _komut_gonder (1 -> + % _V -> -> 10 `i `ui -> -> 48 `i `ui `uc ]
+[; ;main.c: 82: }
+"82
 [e :UE 100 ]
 }
-"22
-[v _komut_gonder `(v ~T0 @X0 1 ef1`uc ]
-{
-[; ;LCD_library.c: 22: void komut_gonder(unsigned char komut) {
-[e :U _komut_gonder ]
-[v _komut `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;LCD_library.c: 23: komut_calistir(komut);
-"23
-[e ( _komut_calistir (1 _komut ]
-[; ;LCD_library.c: 24: }
-"24
-[e :UE 101 ]
-}
-"26
-[v _metin_yaz `(v ~T0 @X0 1 ef1`*Cuc ]
-{
-[; ;LCD_library.c: 26: void metin_yaz(const char *metin) {
-[e :U _metin_yaz ]
-[v _metin `*Cuc ~T0 @X0 1 r1 ]
-[f ]
-[; ;LCD_library.c: 27: bekle_milisaniye(1);
-"27
-[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
-[; ;LCD_library.c: 28: while (*metin) {
-"28
-[e $U 103  ]
-[e :U 104 ]
-{
-[; ;LCD_library.c: 29: RB0 = 1;
-"29
-[e = _RB0 -> -> 1 `i `b ]
-[; ;LCD_library.c: 30: RB2 = 1;
-"30
-[e = _RB2 -> -> 1 `i `b ]
-[; ;LCD_library.c: 31: PORTD = (*metin & 0xF0);
-"31
-[e = _PORTD -> & -> *U _metin `i -> 240 `i `uc ]
-[; ;LCD_library.c: 32: RB2 = 0;
-"32
-[e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 33: bekle_milisaniye(1);
-"33
-[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
-[; ;LCD_library.c: 34: RB2 = 1;
-"34
-[e = _RB2 -> -> 1 `i `b ]
-[; ;LCD_library.c: 35: PORTD = ((*metin & 0x0F) << 4);
-"35
-[e = _PORTD -> << & -> *U _metin `i -> 15 `i -> 4 `i `uc ]
-[; ;LCD_library.c: 36: RB2 = 0;
-"36
-[e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 37: bekle_milisaniye(1);
-"37
-[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
-[; ;LCD_library.c: 38: metin++;
-"38
-[e ++ _metin * -> -> 1 `i `x -> -> # *U _metin `i `x ]
-"39
-}
-[e :U 103 ]
-"28
-[e $ != -> *U _metin `i -> -> -> 0 `i `Cuc `i 104  ]
-[e :U 105 ]
-[; ;LCD_library.c: 39: }
-[; ;LCD_library.c: 40: }
-"40
-[e :UE 102 ]
-}
-"42
-[v _ekran_temizle `(v ~T0 @X0 1 ef ]
-{
-[; ;LCD_library.c: 42: void ekran_temizle(void) {
-[e :U _ekran_temizle ]
-[f ]
-[; ;LCD_library.c: 43: komut_gonder(1);
-"43
-[e ( _komut_gonder (1 -> -> 1 `i `uc ]
-[; ;LCD_library.c: 44: bekle_milisaniye(2);
-"44
-[e ( _bekle_milisaniye (1 -> -> 2 `i `ui ]
-[; ;LCD_library.c: 45: }
-"45
-[e :UE 106 ]
-}
-"47
-[v _imleci_ayarla `(v ~T0 @X0 1 ef2`uc`uc ]
-{
-[; ;LCD_library.c: 47: void imleci_ayarla(unsigned char x, unsigned char y) {
-[e :U _imleci_ayarla ]
-[v _x `uc ~T0 @X0 1 r1 ]
-[v _y `uc ~T0 @X0 1 r2 ]
-[f ]
-[; ;LCD_library.c: 48: if (x == 1)
-"48
-[e $ ! == -> _x `i -> 1 `i 108  ]
-[; ;LCD_library.c: 49: komut_gonder(128 + ((y - 1) % 16));
-"49
-[e ( _komut_gonder (1 -> + -> 128 `i % - -> _y `i -> 1 `i -> 16 `i `uc ]
-[e $U 109  ]
-"50
-[e :U 108 ]
-[; ;LCD_library.c: 50: else
-[; ;LCD_library.c: 51: komut_gonder(192 + ((y - 1) % 16));
-"51
-[e ( _komut_gonder (1 -> + -> 192 `i % - -> _y `i -> 1 `i -> 16 `i `uc ]
-[e :U 109 ]
-[; ;LCD_library.c: 52: }
-"52
-[e :UE 107 ]
-}
-"54
-[v _kutuphaneyi_baslat `(v ~T0 @X0 1 ef ]
-{
-[; ;LCD_library.c: 54: void kutuphaneyi_baslat(void) {
-[e :U _kutuphaneyi_baslat ]
-[f ]
-[; ;LCD_library.c: 55: RB0 = 0;
-"55
-[e = _RB0 -> -> 0 `i `b ]
-[; ;LCD_library.c: 56: RB2 = 0;
-"56
-[e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 57: RB1 = 0;
-"57
-[e = _RB1 -> -> 0 `i `b ]
-[; ;LCD_library.c: 58: bekle_milisaniye(15);
-"58
-[e ( _bekle_milisaniye (1 -> -> 15 `i `ui ]
-[; ;LCD_library.c: 59: RB2 = 1;
-"59
-[e = _RB2 -> -> 1 `i `b ]
-[; ;LCD_library.c: 60: komut_calistir(2);
-"60
-[e ( _komut_calistir (1 -> -> 2 `i `uc ]
-[; ;LCD_library.c: 61: bekle_milisaniye(2);
-"61
-[e ( _bekle_milisaniye (1 -> -> 2 `i `ui ]
-[; ;LCD_library.c: 62: komut_calistir(40);
-"62
-[e ( _komut_calistir (1 -> -> 40 `i `uc ]
-[; ;LCD_library.c: 63: komut_calistir(4);
-"63
-[e ( _komut_calistir (1 -> -> 4 `i `uc ]
-[; ;LCD_library.c: 64: komut_calistir(12);
-"64
-[e ( _komut_calistir (1 -> -> 12 `i `uc ]
-[; ;LCD_library.c: 65: ekran_temizle();
-"65
-[e ( _ekran_temizle ..  ]
-[; ;LCD_library.c: 66: komut_calistir(128);
-"66
-[e ( _komut_calistir (1 -> -> 128 `i `uc ]
-[; ;LCD_library.c: 67: }
-"67
-[e :UE 110 ]
-}
+[a 1C 70 117 114 107 97 110 32 84 46 66 97 100 101 109 99 105 0 ]
+[a 4C 89 79 78 58 83 79 76 0 ]
+[a 3C 89 79 78 58 83 65 71 0 ]
+[a 5C 72 73 90 58 0 ]
+[a 2C 71 50 49 48 49 48 52 48 49 54 0 ]

@@ -1,5 +1,5 @@
 
-# 1 "LCD_library.c"
+# 1 "main.c"
 
 # 18 "C:\Program Files\Microchip\xc8\v2.45\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -1790,7 +1790,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
 
-# 14 "LCD_library.h"
+# 14 "../main.X/LCD_library.h"
 #pragma config FOSC = XT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -1809,69 +1809,83 @@ extern void imleci_ayarla(unsigned char x, unsigned char y);
 extern void kutuphaneyi_baslat(void);
 extern void komut_calistir(unsigned char komut);
 
-# 3 "LCD_library.c"
-void bekle_milisaniye(unsigned int milisaniye) {
-for (unsigned int i = 0; i < milisaniye; i++) {
-_delay((unsigned long)((1)*(4000000/4000.0)));
-}
-}
-
-void komut_calistir(unsigned char komut) {
-RB1 = 0;
-RB0 = 0;
-RB2 = 1;
-PORTD = (komut & 0xF0);
-RB2 = 0;
-bekle_milisaniye(1);
-RB2 = 1;
-PORTD = ((komut & 0x0F) << 4);
-RB2 = 0;
-bekle_milisaniye(1);
+# 4 "main.c"
+const float oran = 5.0 / 1024.0;
+unsigned int adc_deger_okuma(unsigned char kanal)
+{
+if (kanal > 7)
+return 0;
+ADCON0 &= 0xB11000101;
+ADCON0 |= (kanal << 3);
+_delay((unsigned long)((2)*(4000000/4000.0)));
+GO_nDONE = 1;
+while (GO_nDONE)
+;
+return ((ADRESH << 8) + ADRESL);
 }
 
-void komut_gonder(unsigned char komut) {
-komut_calistir(komut);
-}
+void main()
+{
+unsigned int V;
+TRISA = 1;
+TRISB = 0B11000000;
+TRISC = 0;
+TRISD = 0;
+PORTC = 0;
+PORTB = 0;
+PORTD = 0;
 
-void metin_yaz(const char *metin) {
-bekle_milisaniye(1);
-while (*metin) {
-RB0 = 1;
-RB2 = 1;
-PORTD = (*metin & 0xF0);
-RB2 = 0;
-bekle_milisaniye(1);
-RB2 = 1;
-PORTD = ((*metin & 0x0F) << 4);
-RB2 = 0;
-bekle_milisaniye(1);
-metin++;
-}
-}
+T2CON = 0B00000101;
+CCP1CON = 0B00001111;
+ADCON0 = 0B00000001;
+ADCON1 = 0B10000000;
+TMR2 = 0;
+PR2 = 255;
 
-void ekran_temizle(void) {
-komut_gonder(1);
-bekle_milisaniye(2);
-}
-
-void imleci_ayarla(unsigned char x, unsigned char y) {
-if (x == 1)
-komut_gonder(128 + ((y - 1) % 16));
-else
-komut_gonder(192 + ((y - 1) % 16));
-}
-
-void kutuphaneyi_baslat(void) {
-RB0 = 0;
-RB2 = 0;
-RB1 = 0;
-bekle_milisaniye(15);
-RB2 = 1;
-komut_calistir(2);
-bekle_milisaniye(2);
-komut_calistir(40);
-komut_calistir(4);
-komut_calistir(12);
+kutuphaneyi_baslat();
 ekran_temizle();
-komut_calistir(128);
+metin_yaz("Furkan T.Bademci");
+imleci_ayarla(2, 1);
+metin_yaz("G210104016");
+bekle_milisaniye(1000);
+ekran_temizle();
+
+while (1)
+{
+if (RB6 == 1)
+{
+RC3 = 1;
+RC5 = 1;
+imleci_ayarla(2, 6);
+metin_yaz("YON:SAG");
+}
+if (RB6 == 0)
+{
+RC3 = 0;
+RC5 = 0;
+}
+if (RB7 == 1)
+{
+RC4 = 1;
+RC6 = 1;
+imleci_ayarla(2, 6);
+metin_yaz("YON:SOL");
+}
+if (RB7 == 0)
+{
+RC4 = 0;
+RC6 = 0;
+}
+}
+V = adc_deger_okuma(0);
+CCPR1L = V >> 2;
+CCP1X = V & 1;
+CCP1Y = V & 2;
+_delay((unsigned long)((1000)*(4000000/4000.0)));
+
+V = (int)((((ADRESH * 256) + ADRESL) * oran) / 5) * 100;
+imleci_ayarla(1, 6);
+metin_yaz("HIZ:");
+komut_gonder(V % 100 / 10 + 48);
+komut_gonder(V % 10 + 48);
 }
