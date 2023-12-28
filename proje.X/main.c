@@ -108,6 +108,7 @@ void main()
         }
         if (RB6 == 1)
         {
+            
             RC3 = 1;
             RC5 = 1;
 
