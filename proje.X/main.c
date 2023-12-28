@@ -54,11 +54,14 @@ void main()
         adc_deger = (ADRESH * 256 + ADRESL);
 
         voltaj_deger = adc_deger * 0.0049;
+
         // sprintf(voltaj_deger_char, "%.2f", voltaj_deger);
         // imleci_ayarla(1, 5);
         // metin_yaz("HIZ:");
         // imleci_ayarla(1, 9);
         // metin_yaz(voltaj_deger_char);
+
+        // duty_gir(adc_deger);
 
         if (voltaj_deger > 4.97)
         {

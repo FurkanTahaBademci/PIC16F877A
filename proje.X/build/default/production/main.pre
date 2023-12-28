@@ -1926,7 +1926,7 @@ adc_deger = (ADRESH * 256 + ADRESL);
 
 voltaj_deger = adc_deger * 0.0049;
 
-# 63
+# 66
 if (voltaj_deger > 4.97)
 {
 duty_gir(1023);

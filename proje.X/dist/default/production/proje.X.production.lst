@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.45 build 20230818022343 
-                                                                                               Thu Dec 28 15:20:51 2023
+                                                                                               Thu Dec 28 15:39:35 2023
 
 Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og9 
      1                           	processor	16F877A
@@ -808,7 +808,7 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og9
    793     0704  0822               	movf	?___ftmul+2,w
    794     0705  00B3               	movwf	main@voltaj_deger+2
    795                           
-   796                           ;main.c: 63: if (voltaj_deger > 4.97)
+   796                           ;main.c: 66: if (voltaj_deger > 4.97)
    797     0706  300A               	movlw	10
    798     0707  00F0               	movwf	___ftge@ff1
    799     0708  309F               	movlw	159
@@ -825,27 +825,27 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og9
    810     0717  1803               	btfsc	3,0
    811     0718  2F2C               	goto	l1210
    812                           
-   813                           ;main.c: 64: {;main.c: 65: duty_gir(1023);
+   813                           ;main.c: 67: {;main.c: 68: duty_gir(1023);
    814     0719  30FF               	movlw	255
    815     071A  00F0               	movwf	duty_gir@deger
    816     071B  3003               	movlw	3
    817     071C  00F1               	movwf	duty_gir@deger+1
    818     071D  120A  118A  2434  120A  118A  	fcall	_duty_gir
    819                           
-   820                           ;main.c: 66: imleci_ayarla(1, 5);
+   820                           ;main.c: 69: imleci_ayarla(1, 5);
    821     0722  3005               	movlw	5
    822     0723  00F8               	movwf	imleci_ayarla@y
    823     0724  3001               	movlw	1
    824     0725  120A  118A  2420  120A  118A  	fcall	_imleci_ayarla
    825                           
-   826                           ;main.c: 68: metin_yaz("HIZ:%100");
+   826                           ;main.c: 71: metin_yaz("HIZ:%100");
    827     072A  3026               	movlw	(low ((STR_4-__stringbase)| (0+32768)))& (0+255)
    828     072B  2FC2               	goto	L2
    829     072C                     l1210:	
-   830                           ;main.c: 69: }
+   830                           ;main.c: 72: }
    831                           
    832                           
-   833                           ;main.c: 70: else if (voltaj_deger > 3.75)
+   833                           ;main.c: 73: else if (voltaj_deger > 3.75)
    834     072C  3000               	movlw	0
    835     072D  00F0               	movwf	___ftge@ff1
    836     072E  3070               	movlw	112
@@ -862,27 +862,27 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og9
    847     073D  1803               	btfsc	3,0
    848     073E  2F52               	goto	l1216
    849                           
-   850                           ;main.c: 71: {;main.c: 72: duty_gir(750);
+   850                           ;main.c: 74: {;main.c: 75: duty_gir(750);
    851     073F  30EE               	movlw	238
    852     0740  00F0               	movwf	duty_gir@deger
    853     0741  3002               	movlw	2
    854     0742  00F1               	movwf	duty_gir@deger+1
    855     0743  120A  118A  2434  120A  118A  	fcall	_duty_gir
    856                           
-   857                           ;main.c: 73: imleci_ayarla(1, 5);
+   857                           ;main.c: 76: imleci_ayarla(1, 5);
    858     0748  3005               	movlw	5
    859     0749  00F8               	movwf	imleci_ayarla@y
    860     074A  3001               	movlw	1
    861     074B  120A  118A  2420  120A  118A  	fcall	_imleci_ayarla
    862                           
-   863                           ;main.c: 74: metin_yaz("HIZ: %75");
+   863                           ;main.c: 77: metin_yaz("HIZ: %75");
    864     0750  3041               	movlw	(low ((STR_5-__stringbase)| (0+32768)))& (0+255)
    865     0751  2FC2               	goto	L2
    866     0752                     l1216:	
-   867                           ;main.c: 75: }
+   867                           ;main.c: 78: }
    868                           
    869                           
-   870                           ;main.c: 76: else if (voltaj_deger > 2.50)
+   870                           ;main.c: 79: else if (voltaj_deger > 2.50)
    871     0752  3000               	movlw	0
    872     0753  00F0               	movwf	___ftge@ff1
    873     0754  3020               	movlw	32
@@ -899,27 +899,27 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og9
    884     0763  1803               	btfsc	3,0
    885     0764  2F78               	goto	l1222
    886                           
-   887                           ;main.c: 77: {;main.c: 78: duty_gir(512);
+   887                           ;main.c: 80: {;main.c: 81: duty_gir(512);
    888     0765  3000               	movlw	0
    889     0766  00F0               	movwf	duty_gir@deger
    890     0767  3002               	movlw	2
    891     0768  00F1               	movwf	duty_gir@deger+1
    892     0769  120A  118A  2434  120A  118A  	fcall	_duty_gir
    893                           
-   894                           ;main.c: 79: imleci_ayarla(1, 5);
+   894                           ;main.c: 82: imleci_ayarla(1, 5);
    895     076E  3005               	movlw	5
    896     076F  00F8               	movwf	imleci_ayarla@y
    897     0770  3001               	movlw	1
    898     0771  120A  118A  2420  120A  118A  	fcall	_imleci_ayarla
    899                           
-   900                           ;main.c: 80: metin_yaz("HIZ: %50");
+   900                           ;main.c: 83: metin_yaz("HIZ: %50");
    901     0776  302F               	movlw	(low ((STR_6-__stringbase)| (0+32768)))& (0+255)
    902     0777  2FC2               	goto	L2
    903     0778                     l1222:	
-   904                           ;main.c: 81: }
+   904                           ;main.c: 84: }
    905                           
    906                           
-   907                           ;main.c: 82: else if (voltaj_deger > 1.75)
+   907                           ;main.c: 85: else if (voltaj_deger > 1.75)
    908     0778  3000               	movlw	0
    909     0779  00F0               	movwf	___ftge@ff1
    910     077A  30E0               	movlw	224
@@ -936,27 +936,27 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og9
    921     0789  1803               	btfsc	3,0
    922     078A  2F9E               	goto	l1228
    923                           
-   924                           ;main.c: 83: {;main.c: 84: duty_gir(250);
+   924                           ;main.c: 86: {;main.c: 87: duty_gir(250);
    925     078B  30FA               	movlw	250
    926     078C  00F0               	movwf	duty_gir@deger
    927     078D  3000               	movlw	0
    928     078E  00F1               	movwf	duty_gir@deger+1
    929     078F  120A  118A  2434  120A  118A  	fcall	_duty_gir
    930                           
-   931                           ;main.c: 85: imleci_ayarla(1, 5);
+   931                           ;main.c: 88: imleci_ayarla(1, 5);
    932     0794  3005               	movlw	5
    933     0795  00F8               	movwf	imleci_ayarla@y
    934     0796  3001               	movlw	1
    935     0797  120A  118A  2420  120A  118A  	fcall	_imleci_ayarla
    936                           
-   937                           ;main.c: 86: metin_yaz("HIZ: %25");
+   937                           ;main.c: 89: metin_yaz("HIZ: %25");
    938     079C  3038               	movlw	(low ((STR_7-__stringbase)| (0+32768)))& (0+255)
    939     079D  2FC2               	goto	L2
    940     079E                     l1228:	
-   941                           ;main.c: 87: }
+   941                           ;main.c: 90: }
    942                           
    943                           
-   944                           ;main.c: 89: else if (voltaj_deger > 0.00)
+   944                           ;main.c: 92: else if (voltaj_deger > 0.00)
    945     079E  3000               	movlw	0
    946     079F  00F0               	movwf	___ftge@ff1
    947     07A0  3000               	movlw	0
@@ -973,104 +973,104 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og9
    958     07AF  1803               	btfsc	3,0
    959     07B0  2FC7               	goto	l1234
    960                           
-   961                           ;main.c: 90: {;main.c: 91: duty_gir(0);
+   961                           ;main.c: 93: {;main.c: 94: duty_gir(0);
    962     07B1  3000               	movlw	0
    963     07B2  00F0               	movwf	duty_gir@deger
    964     07B3  00F1               	movwf	duty_gir@deger+1
    965     07B4  120A  118A  2434  120A  118A  	fcall	_duty_gir
    966                           
-   967                           ;main.c: 92: imleci_ayarla(1, 5);
+   967                           ;main.c: 95: imleci_ayarla(1, 5);
    968     07B9  3005               	movlw	5
    969     07BA  00F8               	movwf	imleci_ayarla@y
    970     07BB  3001               	movlw	1
    971     07BC  120A  118A  2420  120A  118A  	fcall	_imleci_ayarla
    972                           
-   973                           ;main.c: 93: metin_yaz("HIZ: %00");
+   973                           ;main.c: 96: metin_yaz("HIZ: %00");
    974     07C1  301D               	movlw	(low ((STR_8-__stringbase)| (0+32768)))& (0+255)
    975     07C2                     L2:
    976     07C2  120A  118A  2513  120A  118A  	fcall	_metin_yaz
    977     07C7                     l1234:
    978                           
-   979                           ;main.c: 94: };main.c: 96: if (RB7 == 1)
+   979                           ;main.c: 97: };main.c: 99: if (RB7 == 1)
    980     07C7  1283               	bcf	3,5	;RP0=0, select bank0
    981     07C8  1303               	bcf	3,6	;RP1=0, select bank0
    982     07C9  1F86               	btfss	6,7	;volatile
    983     07CA  2FDD               	goto	l1242
    984                           
-   985                           ;main.c: 97: {;main.c: 98: RC4 = 1;
+   985                           ;main.c: 100: {;main.c: 101: RC4 = 1;
    986     07CB  1607               	bsf	7,4	;volatile
    987                           
-   988                           ;main.c: 99: RC6 = 1;
+   988                           ;main.c: 102: RC6 = 1;
    989     07CC  1707               	bsf	7,6	;volatile
    990                           
-   991                           ;main.c: 101: RC3 = 0;
+   991                           ;main.c: 104: RC3 = 0;
    992     07CD  1187               	bcf	7,3	;volatile
    993                           
-   994                           ;main.c: 102: RC5 = 0;
+   994                           ;main.c: 105: RC5 = 0;
    995     07CE  1287               	bcf	7,5	;volatile
    996                           
-   997                           ;main.c: 103: imleci_ayarla(2, 5);
+   997                           ;main.c: 106: imleci_ayarla(2, 5);
    998     07CF  3005               	movlw	5
    999     07D0  00F8               	movwf	imleci_ayarla@y
   1000     07D1  3002               	movlw	2
   1001     07D2  120A  118A  2420  120A  118A  	fcall	_imleci_ayarla
   1002                           
-  1003                           ;main.c: 104: metin_yaz("YON:SOL");
+  1003                           ;main.c: 107: metin_yaz("YON:SOL");
   1004     07D7  3052               	movlw	(low ((STR_9-__stringbase)| (0+32768)))& (0+255)
   1005     07D8  120A  118A  2513  120A  118A  	fcall	_metin_yaz
   1006     07DD                     l1242:
   1007                           
-  1008                           ;main.c: 105: };main.c: 106: if (RB6 == 1)
+  1008                           ;main.c: 108: };main.c: 109: if (RB6 == 1)
   1009     07DD  1283               	bcf	3,5	;RP0=0, select bank0
   1010     07DE  1303               	bcf	3,6	;RP1=0, select bank0
   1011     07DF  1F06               	btfss	6,6	;volatile
   1012     07E0  2FF3               	goto	l1250
   1013                           
-  1014                           ;main.c: 107: {;main.c: 108: RC3 = 1;
+  1014                           ;main.c: 110: {;main.c: 111: RC3 = 1;
   1015     07E1  1587               	bsf	7,3	;volatile
   1016                           
-  1017                           ;main.c: 109: RC5 = 1;
+  1017                           ;main.c: 112: RC5 = 1;
   1018     07E2  1687               	bsf	7,5	;volatile
   1019                           
-  1020                           ;main.c: 111: RC4 = 0;
+  1020                           ;main.c: 114: RC4 = 0;
   1021     07E3  1207               	bcf	7,4	;volatile
   1022                           
-  1023                           ;main.c: 112: RC6 = 0;
+  1023                           ;main.c: 115: RC6 = 0;
   1024     07E4  1307               	bcf	7,6	;volatile
   1025                           
-  1026                           ;main.c: 113: imleci_ayarla(2, 5);
+  1026                           ;main.c: 116: imleci_ayarla(2, 5);
   1027     07E5  3005               	movlw	5
   1028     07E6  00F8               	movwf	imleci_ayarla@y
   1029     07E7  3002               	movlw	2
   1030     07E8  120A  118A  2420  120A  118A  	fcall	_imleci_ayarla
   1031                           
-  1032                           ;main.c: 114: metin_yaz("YON:SAG");
+  1032                           ;main.c: 117: metin_yaz("YON:SAG");
   1033     07ED  304A               	movlw	(low ((STR_10-__stringbase)| (0+32768)))& (0+255)
   1034     07EE  120A  118A  2513  120A  118A  	fcall	_metin_yaz
   1035     07F3                     l1250:
   1036                           
-  1037                           ;main.c: 115: };main.c: 116: if (RB5 == 1)
+  1037                           ;main.c: 118: };main.c: 119: if (RB5 == 1)
   1038     07F3  1283               	bcf	3,5	;RP0=0, select bank0
   1039     07F4  1303               	bcf	3,6	;RP1=0, select bank0
   1040     07F5  1E86               	btfss	6,5	;volatile
   1041     07F6  2ECF               	goto	l1190
   1042                           
-  1043                           ;main.c: 117: {;main.c: 118: RC3 = 0;
+  1043                           ;main.c: 120: {;main.c: 121: RC3 = 0;
   1044     07F7  1187               	bcf	7,3	;volatile
   1045                           
-  1046                           ;main.c: 119: RC5 = 0;
+  1046                           ;main.c: 122: RC5 = 0;
   1047     07F8  1287               	bcf	7,5	;volatile
   1048                           
-  1049                           ;main.c: 120: RC4 = 0;
+  1049                           ;main.c: 123: RC4 = 0;
   1050     07F9  1207               	bcf	7,4	;volatile
   1051                           
-  1052                           ;main.c: 121: RC6 = 0;
+  1052                           ;main.c: 124: RC6 = 0;
   1053     07FA  1307               	bcf	7,6	;volatile
   1054     07FB  2EC1               	goto	L1
   1055     07FC                     __end_of_main:	
-  1056                           ;main.c: 123: metin_yaz("YON:DUR");
+  1056                           ;main.c: 126: metin_yaz("YON:DUR");
   1057                           
-  1058                           ;main.c: 122: imleci_ayarla(2, 5);
+  1058                           ;main.c: 125: imleci_ayarla(2, 5);
   1059                           
   1060                           
   1061                           	psect	text1
@@ -2440,7 +2440,7 @@ DATA                 0      0       0      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.45 build 20230818022343 
-Symbol Table                                                                                   Thu Dec 28 15:20:51 2023
+Symbol Table                                                                                   Thu Dec 28 15:39:35 2023
 
                          pc 0002                          l75 06DE            _bekle_milisaniye 044C  
                         fsr 0004                         l105 044E                         l436 05AD  

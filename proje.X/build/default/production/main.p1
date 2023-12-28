@@ -1331,202 +1331,202 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 56: voltaj_deger = adc_deger * 0.0049;
 "56
 [e = _voltaj_deger -> * -> _adc_deger `d .0.0049 `f ]
-[; ;main.c: 63: if (voltaj_deger > 4.97)
-"63
-[e $ ! > -> _voltaj_deger `d .4.97 104  ]
-[; ;main.c: 64: {
-"64
-{
-[; ;main.c: 65: duty_gir(1023);
-"65
-[e ( _duty_gir (1 -> 1023 `i ]
-[; ;main.c: 66: imleci_ayarla(1, 5);
+[; ;main.c: 66: if (voltaj_deger > 4.97)
 "66
-[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 68: metin_yaz("HIZ:%100");
+[e $ ! > -> _voltaj_deger `d .4.97 104  ]
+[; ;main.c: 67: {
+"67
+{
+[; ;main.c: 68: duty_gir(1023);
 "68
-[e ( _metin_yaz (1 :s 4C ]
+[e ( _duty_gir (1 -> 1023 `i ]
+[; ;main.c: 69: imleci_ayarla(1, 5);
 "69
-}
-[; ;main.c: 69: }
-[e $U 105  ]
-"70
-[e :U 104 ]
-[; ;main.c: 70: else if (voltaj_deger > 3.75)
-[e $ ! > -> _voltaj_deger `d .3.75 106  ]
-[; ;main.c: 71: {
+[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 71: metin_yaz("HIZ:%100");
 "71
-{
-[; ;main.c: 72: duty_gir(750);
+[e ( _metin_yaz (1 :s 4C ]
 "72
-[e ( _duty_gir (1 -> 750 `i ]
-[; ;main.c: 73: imleci_ayarla(1, 5);
+}
+[; ;main.c: 72: }
+[e $U 105  ]
 "73
-[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 74: metin_yaz("HIZ: %75");
+[e :U 104 ]
+[; ;main.c: 73: else if (voltaj_deger > 3.75)
+[e $ ! > -> _voltaj_deger `d .3.75 106  ]
+[; ;main.c: 74: {
 "74
-[e ( _metin_yaz (1 :s 5C ]
+{
+[; ;main.c: 75: duty_gir(750);
 "75
-}
-[; ;main.c: 75: }
-[e $U 107  ]
+[e ( _duty_gir (1 -> 750 `i ]
+[; ;main.c: 76: imleci_ayarla(1, 5);
 "76
-[e :U 106 ]
-[; ;main.c: 76: else if (voltaj_deger > 2.50)
-[e $ ! > -> _voltaj_deger `d .2.50 108  ]
-[; ;main.c: 77: {
+[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 77: metin_yaz("HIZ: %75");
 "77
-{
-[; ;main.c: 78: duty_gir(512);
+[e ( _metin_yaz (1 :s 5C ]
 "78
-[e ( _duty_gir (1 -> 512 `i ]
-[; ;main.c: 79: imleci_ayarla(1, 5);
+}
+[; ;main.c: 78: }
+[e $U 107  ]
 "79
-[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 80: metin_yaz("HIZ: %50");
+[e :U 106 ]
+[; ;main.c: 79: else if (voltaj_deger > 2.50)
+[e $ ! > -> _voltaj_deger `d .2.50 108  ]
+[; ;main.c: 80: {
 "80
-[e ( _metin_yaz (1 :s 6C ]
+{
+[; ;main.c: 81: duty_gir(512);
 "81
-}
-[; ;main.c: 81: }
-[e $U 109  ]
+[e ( _duty_gir (1 -> 512 `i ]
+[; ;main.c: 82: imleci_ayarla(1, 5);
 "82
-[e :U 108 ]
-[; ;main.c: 82: else if (voltaj_deger > 1.75)
-[e $ ! > -> _voltaj_deger `d .1.75 110  ]
-[; ;main.c: 83: {
+[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 83: metin_yaz("HIZ: %50");
 "83
-{
-[; ;main.c: 84: duty_gir(250);
+[e ( _metin_yaz (1 :s 6C ]
 "84
-[e ( _duty_gir (1 -> 250 `i ]
-[; ;main.c: 85: imleci_ayarla(1, 5);
-"85
-[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 86: metin_yaz("HIZ: %25");
-"86
-[e ( _metin_yaz (1 :s 7C ]
-"87
 }
-[; ;main.c: 87: }
-[e $U 111  ]
-"89
-[e :U 110 ]
-[; ;main.c: 89: else if (voltaj_deger > 0.00)
-[e $ ! > -> _voltaj_deger `d .0.00 112  ]
-[; ;main.c: 90: {
-"90
+[; ;main.c: 84: }
+[e $U 109  ]
+"85
+[e :U 108 ]
+[; ;main.c: 85: else if (voltaj_deger > 1.75)
+[e $ ! > -> _voltaj_deger `d .1.75 110  ]
+[; ;main.c: 86: {
+"86
 {
-[; ;main.c: 91: duty_gir(0);
-"91
-[e ( _duty_gir (1 -> 0 `i ]
-[; ;main.c: 92: imleci_ayarla(1, 5);
-"92
+[; ;main.c: 87: duty_gir(250);
+"87
+[e ( _duty_gir (1 -> 250 `i ]
+[; ;main.c: 88: imleci_ayarla(1, 5);
+"88
 [e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 93: metin_yaz("HIZ: %00");
+[; ;main.c: 89: metin_yaz("HIZ: %25");
+"89
+[e ( _metin_yaz (1 :s 7C ]
+"90
+}
+[; ;main.c: 90: }
+[e $U 111  ]
+"92
+[e :U 110 ]
+[; ;main.c: 92: else if (voltaj_deger > 0.00)
+[e $ ! > -> _voltaj_deger `d .0.00 112  ]
+[; ;main.c: 93: {
 "93
-[e ( _metin_yaz (1 :s 8C ]
+{
+[; ;main.c: 94: duty_gir(0);
 "94
+[e ( _duty_gir (1 -> 0 `i ]
+[; ;main.c: 95: imleci_ayarla(1, 5);
+"95
+[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 96: metin_yaz("HIZ: %00");
+"96
+[e ( _metin_yaz (1 :s 8C ]
+"97
 }
 [e :U 112 ]
-"96
+"99
 [e :U 111 ]
 [e :U 109 ]
 [e :U 107 ]
 [e :U 105 ]
-[; ;main.c: 94: }
-[; ;main.c: 96: if (RB7 == 1)
+[; ;main.c: 97: }
+[; ;main.c: 99: if (RB7 == 1)
 [e $ ! == -> _RB7 `i -> 1 `i 113  ]
-[; ;main.c: 97: {
-"97
+[; ;main.c: 100: {
+"100
 {
-[; ;main.c: 98: RC4 = 1;
-"98
-[e = _RC4 -> -> 1 `i `b ]
-[; ;main.c: 99: RC6 = 1;
-"99
-[e = _RC6 -> -> 1 `i `b ]
-[; ;main.c: 101: RC3 = 0;
+[; ;main.c: 101: RC4 = 1;
 "101
-[e = _RC3 -> -> 0 `i `b ]
-[; ;main.c: 102: RC5 = 0;
+[e = _RC4 -> -> 1 `i `b ]
+[; ;main.c: 102: RC6 = 1;
 "102
-[e = _RC5 -> -> 0 `i `b ]
-[; ;main.c: 103: imleci_ayarla(2, 5);
-"103
-[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 104: metin_yaz("YON:SOL");
+[e = _RC6 -> -> 1 `i `b ]
+[; ;main.c: 104: RC3 = 0;
 "104
-[e ( _metin_yaz (1 :s 9C ]
+[e = _RC3 -> -> 0 `i `b ]
+[; ;main.c: 105: RC5 = 0;
 "105
+[e = _RC5 -> -> 0 `i `b ]
+[; ;main.c: 106: imleci_ayarla(2, 5);
+"106
+[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 107: metin_yaz("YON:SOL");
+"107
+[e ( _metin_yaz (1 :s 9C ]
+"108
 }
 [e :U 113 ]
-[; ;main.c: 105: }
-[; ;main.c: 106: if (RB6 == 1)
-"106
-[e $ ! == -> _RB6 `i -> 1 `i 114  ]
-[; ;main.c: 107: {
-"107
-{
-[; ;main.c: 108: RC3 = 1;
-"108
-[e = _RC3 -> -> 1 `i `b ]
-[; ;main.c: 109: RC5 = 1;
+[; ;main.c: 108: }
+[; ;main.c: 109: if (RB6 == 1)
 "109
-[e = _RC5 -> -> 1 `i `b ]
-[; ;main.c: 111: RC4 = 0;
+[e $ ! == -> _RB6 `i -> 1 `i 114  ]
+[; ;main.c: 110: {
+"110
+{
+[; ;main.c: 111: RC3 = 1;
 "111
-[e = _RC4 -> -> 0 `i `b ]
-[; ;main.c: 112: RC6 = 0;
+[e = _RC3 -> -> 1 `i `b ]
+[; ;main.c: 112: RC5 = 1;
 "112
-[e = _RC6 -> -> 0 `i `b ]
-[; ;main.c: 113: imleci_ayarla(2, 5);
-"113
-[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 114: metin_yaz("YON:SAG");
+[e = _RC5 -> -> 1 `i `b ]
+[; ;main.c: 114: RC4 = 0;
 "114
-[e ( _metin_yaz (1 :s 10C ]
+[e = _RC4 -> -> 0 `i `b ]
+[; ;main.c: 115: RC6 = 0;
 "115
+[e = _RC6 -> -> 0 `i `b ]
+[; ;main.c: 116: imleci_ayarla(2, 5);
+"116
+[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 117: metin_yaz("YON:SAG");
+"117
+[e ( _metin_yaz (1 :s 10C ]
+"118
 }
 [e :U 114 ]
-[; ;main.c: 115: }
-[; ;main.c: 116: if (RB5 == 1)
-"116
-[e $ ! == -> _RB5 `i -> 1 `i 115  ]
-[; ;main.c: 117: {
-"117
-{
-[; ;main.c: 118: RC3 = 0;
-"118
-[e = _RC3 -> -> 0 `i `b ]
-[; ;main.c: 119: RC5 = 0;
+[; ;main.c: 118: }
+[; ;main.c: 119: if (RB5 == 1)
 "119
-[e = _RC5 -> -> 0 `i `b ]
-[; ;main.c: 120: RC4 = 0;
+[e $ ! == -> _RB5 `i -> 1 `i 115  ]
+[; ;main.c: 120: {
 "120
-[e = _RC4 -> -> 0 `i `b ]
-[; ;main.c: 121: RC6 = 0;
+{
+[; ;main.c: 121: RC3 = 0;
 "121
-[e = _RC6 -> -> 0 `i `b ]
-[; ;main.c: 122: imleci_ayarla(2, 5);
+[e = _RC3 -> -> 0 `i `b ]
+[; ;main.c: 122: RC5 = 0;
 "122
-[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 123: metin_yaz("YON:DUR");
+[e = _RC5 -> -> 0 `i `b ]
+[; ;main.c: 123: RC4 = 0;
 "123
-[e ( _metin_yaz (1 :s 11C ]
+[e = _RC4 -> -> 0 `i `b ]
+[; ;main.c: 124: RC6 = 0;
 "124
+[e = _RC6 -> -> 0 `i `b ]
+[; ;main.c: 125: imleci_ayarla(2, 5);
+"125
+[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 126: metin_yaz("YON:DUR");
+"126
+[e ( _metin_yaz (1 :s 11C ]
+"127
 }
 [e :U 115 ]
-"125
+"128
 }
 [e :U 98 ]
 "45
 [e $U 99  ]
 [e :U 100 ]
-[; ;main.c: 124: }
-[; ;main.c: 125: }
-[; ;main.c: 126: }
-"126
+[; ;main.c: 127: }
+[; ;main.c: 128: }
+[; ;main.c: 129: }
+"129
 [e :UE 97 ]
 }
 [a 1C 70 117 114 107 97 110 32 84 46 66 97 100 101 109 99 105 0 ]
