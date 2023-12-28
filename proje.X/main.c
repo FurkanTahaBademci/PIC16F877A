@@ -11,8 +11,6 @@ void duty_gir(int deger)
 
 void main()
 {
-    int hiz = 0;
-
     int adc_deger;
     float voltaj_deger;
     char voltaj_deger_char[10];
@@ -33,16 +31,68 @@ void main()
 
     PR2 = 49; // 50 sayma
 
+    duty_gir(0);
     kutuphaneyi_baslat();
     ekran_temizle();
     metin_yaz("Furkan T.Bademci");
     imleci_ayarla(2, 1);
     metin_yaz("G210104016");
-    bekle_milisaniye(1000);
+    bekle_milisaniye(400);
     ekran_temizle();
+    imleci_ayarla(2, 5);
+    metin_yaz("YON:DUR");
 
     while (1)
     {
+        __delay_ms(10);
+        ADCON0bits.CHS2 = 0;
+        ADCON0bits.CHS1 = 1;
+        ADCON0bits.CHS0 = 0;
+        ADCON0bits.GO = 1;
+        while (ADCON0bits.GO_nDONE)
+            ;
+        adc_deger = (ADRESH * 256 + ADRESL);
+
+        voltaj_deger = adc_deger * 0.0049;
+        // sprintf(voltaj_deger_char, "%.2f", voltaj_deger);
+        // imleci_ayarla(1, 5);
+        // metin_yaz("HIZ:");
+        // imleci_ayarla(1, 9);
+        // metin_yaz(voltaj_deger_char);
+
+        if (voltaj_deger > 4.97)
+        {
+            duty_gir(1023);
+            imleci_ayarla(1, 5);
+
+            metin_yaz("HIZ:%100");
+        }
+        else if (voltaj_deger > 3.75)
+        {
+            duty_gir(750);
+            imleci_ayarla(1, 5);
+            metin_yaz("HIZ: %75");
+        }
+        else if (voltaj_deger > 2.50)
+        {
+            duty_gir(512);
+            imleci_ayarla(1, 5);
+            metin_yaz("HIZ: %50");
+        }
+        else if (voltaj_deger > 1.75)
+        {
+            duty_gir(250);
+            imleci_ayarla(1, 5);
+            metin_yaz("HIZ: %25");
+        }
+
+        else if (voltaj_deger > 0.00)
+        {
+            duty_gir(0);
+            imleci_ayarla(1, 5);
+            metin_yaz("HIZ: %00");
+        }
+
         if (RB7 == 1)
         {
             RC4 = 1;
@@ -72,22 +122,5 @@ void main()
             imleci_ayarla(2, 5);
             metin_yaz("YON:DUR");
         }
-
-        __delay_ms(100);
-        ADCON0bits.CHS2 = 0;
-        ADCON0bits.CHS1 = 1;
-        ADCON0bits.CHS0 = 0;
-        ADCON0bits.GO = 1;
-        while (ADCON0bits.GO_nDONE)
-            ;
-        adc_deger = ADRESH * 256 + ADRESL;
-        // duty_gir(adc_deger / 5);
-        voltaj_deger = adc_deger * 0.0048;
-        sprintf(voltaj_deger_char, "%.2f", voltaj_deger);
-
-        imleci_ayarla(1, 5);
-        metin_yaz("HIZ:");
-        imleci_ayarla(1, 9);
-        metin_yaz(voltaj_deger_char);
     }
 }
