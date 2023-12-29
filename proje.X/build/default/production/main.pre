@@ -1900,7 +1900,7 @@ ADCON1 = 0b11000000;
 ADCON0 = 0b00010001;
 TMR2 = 0;
 
-PR2 = 49;
+PR2 = 255;
 
 duty_gir(0);
 kutuphaneyi_baslat();
@@ -1958,6 +1958,11 @@ else if (voltaj_deger > 0.00)
 duty_gir(0);
 imleci_ayarla(1, 5);
 metin_yaz("HIZ: %00");
+RC3 = 0;
+RC5 = 0;
+RC4 = 0;
+RC6 = 0;
+
 }
 
 if (RB7 == 1)
@@ -1972,6 +1977,7 @@ metin_yaz("YON:SOL");
 }
 if (RB6 == 1)
 {
+
 RC3 = 1;
 RC5 = 1;
 

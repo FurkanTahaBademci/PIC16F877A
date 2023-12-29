@@ -29,7 +29,7 @@ void main()
     ADCON0 = 0b00010001;  // fosc/4, AN2, GODONE=0, ADON=1
     TMR2 = 0;
 
-    PR2 = 49; // 50 sayma
+    PR2 = 255;
 
     duty_gir(0);
     kutuphaneyi_baslat();
@@ -94,6 +94,11 @@ void main()
             duty_gir(0);
             imleci_ayarla(1, 5);
             metin_yaz("HIZ: %00");
+            RC3 = 0;
+            RC5 = 0;
+            RC4 = 0;
+            RC6 = 0;
+            
         }
 
         if (RB7 == 1)
@@ -108,7 +113,7 @@ void main()
         }
         if (RB6 == 1)
         {
-            
+
             RC3 = 1;
             RC5 = 1;
 
