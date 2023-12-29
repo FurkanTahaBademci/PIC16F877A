@@ -2,7 +2,7 @@
  * File:   LCD_library.h
  * Author: furkan
  *
- * Created on 16 Aral?k 2023 Cumartesi, 20:03
+ * Created on 16 Aralık 2023 Cumartesi, 20:03
  */
 
 #ifndef LCD_LIBRARY_H
@@ -10,20 +10,24 @@
 
 #include <xc.h>
 
-#pragma config FOSC = XT   // Osilat?r Se?im bitleri (RC osilat?r?)
-#pragma config WDTE = OFF  // Watchdog Timer Enable bit (WDT etkin)
-#pragma config PWRTE = OFF // Power-up Timer Enable bit (PWRT devre d???)
+#pragma config FOSC = XT   // Osilatör Seçim bitleri (RC osilatörü?)
+#pragma config WDTE = OFF  // Watchdog Timer Enable bit (WDT etkin değil)
+#pragma config PWRTE = OFF // Power-up Timer Enable bit (PWRT devre dışı)
 #pragma config BOREN = ON  // Brown-out Reset Enable bit (BOR etkin)
-#pragma config LVP = ON    // D???k Gerilimli (Tek Kaynakl?) Devre ??i Seri Programlama Enable bit (RB3/PGM pini PGM i?levine sahiptir; d???k gerilim programlamas? etkin)
-#pragma config CPD = OFF   // Data EEPROM Belle?i Kod Koruma biti (Data EEPROM kod koruma kapal?)
-#pragma config WRT = OFF   // Flash Program Belle?i Yazma ?zin bitleri (Yazma korumas? kapal?; t?m program belle?i EECON kontrol? ile yaz?labilir)
-#pragma config CP = OFF    // Flash Program Belle?i Kod Koruma biti (Kod koruma kapal?)
+#pragma config LVP = ON    // Düşük Gerilim Programlamayı Etkinleştir (RB3/PGM pini PGM işlevine sahiptir; düşük gerilim programlaması etkin)
+#pragma config CPD = OFF   // Data EEPROM Belleği Kod Koruma biti (Data EEPROM kod koruma kapalı)
+#pragma config WRT = OFF   // Flash Program Belleği Yazma İzin bitleri (Yazma koruması kapalı; tüm program belleği EECON kontrolü ile yazılabilir)
+#pragma config CP = OFF    // Flash Program Belleği Kod Koruma biti (Kod koruma kapalı)
 
-#define _XTAL_FREQ 4000000
-#define RS RB0
-#define RW RB1
-#define E RB2
-#define LCD_PORT PORTD
+#define _XTAL_FREQ 4000000 // Kristal frekansı (4MHz)
+
+// LCD Pin Tanımlamaları
+#define RS RB0         // Register Select
+#define RW RB1         // Read/Write
+#define E RB2          // Enable
+#define LCD_PORT PORTD // LCD Data Port
+
+// LCD Komutları
 #define EKRANI_TEMIZLE 1
 #define BASLANGICA_DON 2
 #define SAGA_KAYDIR 4
@@ -41,6 +45,7 @@
 #define CIFT_SATIR 40
 #define TEK_SATIR 32
 
+// Fonksiyon Prototipleri
 extern void bekle_milisaniye(unsigned int milisaniye);
 extern void komut_gonder(unsigned char komut);
 extern void ekran_temizle(void);

@@ -1800,7 +1800,7 @@ extern __bank0 __bit __timeout;
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-# 44
+# 49
 extern void bekle_milisaniye(unsigned int milisaniye);
 extern void komut_gonder(unsigned char komut);
 extern void ekran_temizle(void);
@@ -1810,13 +1810,18 @@ extern void kutuphaneyi_baslat(void);
 extern void komut_calistir(unsigned char komut);
 
 # 3 "LCD_library.c"
-void bekle_milisaniye(unsigned int milisaniye) {
-for (unsigned int i = 0; i < milisaniye; i++) {
+void bekle_milisaniye(unsigned int milisaniye)
+{
+
+for (unsigned int i = 0; i < milisaniye; i++)
+{
 _delay((unsigned long)((1)*(4000000/4000.0)));
 }
 }
 
-void komut_calistir(unsigned char komut) {
+void komut_calistir(unsigned char komut)
+{
+
 RB1 = 0;
 RB0 = 0;
 RB2 = 1;
@@ -1829,13 +1834,18 @@ RB2 = 0;
 bekle_milisaniye(10);
 }
 
-void komut_gonder(unsigned char komut) {
+void komut_gonder(unsigned char komut)
+{
+
 komut_calistir(komut);
 }
 
-void metin_yaz(const char *metin) {
+void metin_yaz(const char *metin)
+{
+
 bekle_milisaniye(1);
-while (*metin) {
+while (*metin)
+{
 RB0 = 1;
 RB2 = 1;
 PORTD = (*metin & 0xF0);
@@ -1849,19 +1859,25 @@ metin++;
 }
 }
 
-void ekran_temizle(void) {
+void ekran_temizle(void)
+{
+
 komut_gonder(1);
 bekle_milisaniye(2);
 }
 
-void imleci_ayarla(unsigned char x, unsigned char y) {
+void imleci_ayarla(unsigned char x, unsigned char y)
+{
+
 if (x == 1)
 komut_gonder(128 + ((y - 1) % 16));
 else
 komut_gonder(192 + ((y - 1) % 16));
 }
 
-void kutuphaneyi_baslat(void) {
+void kutuphaneyi_baslat(void)
+{
+
 RB0 = 0;
 RB2 = 0;
 RB1 = 0;

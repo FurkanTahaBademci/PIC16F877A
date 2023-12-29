@@ -19,21 +19,21 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "3 C:\Users\furkan\Desktop\PIC16F877A\proje.X\LCD_library.c
 [v _bekle_milisaniye bekle_milisaniye `(v  1 e 1 0 ]
-"9
+"12
 [v _komut_calistir komut_calistir `(v  1 e 1 0 ]
-"22
+"27
 [v _komut_gonder komut_gonder `(v  1 e 1 0 ]
-"26
+"33
 [v _metin_yaz metin_yaz `(v  1 e 1 0 ]
-"42
+"52
 [v _ekran_temizle ekran_temizle `(v  1 e 1 0 ]
-"47
+"59
 [v _imleci_ayarla imleci_ayarla `(v  1 e 1 0 ]
-"54
+"68
 [v _kutuphaneyi_baslat kutuphaneyi_baslat `(v  1 e 1 0 ]
 "5 C:\Users\furkan\Desktop\PIC16F877A\proje.X\main.c
 [v _duty_gir duty_gir `(v  1 e 1 0 ]
-"12
+"17
 [v _main main `(v  1 e 1 0 ]
 "166 C:\Program Files\Microchip\xc8\v2.45\pic\include\proc\pic16f877a.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -116,72 +116,76 @@
 [v _RC5 RC5 `VEb  1 e 0 @61 ]
 "2726
 [v _RC6 RC6 `VEb  1 e 0 @62 ]
-"12 C:\Users\furkan\Desktop\PIC16F877A\proje.X\main.c
+"17 C:\Users\furkan\Desktop\PIC16F877A\proje.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"15
+"20
 [v main@voltaj_deger voltaj_deger `f  1 a 3 17 ]
-"14
+"19
 [v main@adc_deger adc_deger `i  1 a 2 15 ]
-"135
+"139
 } 0
-"26 C:\Users\furkan\Desktop\PIC16F877A\proje.X\LCD_library.c
+"33 C:\Users\furkan\Desktop\PIC16F877A\proje.X\LCD_library.c
 [v _metin_yaz metin_yaz `(v  1 e 1 0 ]
 {
 [v metin_yaz@metin metin `*.24DCuc  1 a 1 wreg ]
 [v metin_yaz@metin metin `*.24DCuc  1 a 1 wreg ]
+"36
 [v metin_yaz@metin metin `*.24DCuc  1 a 1 6 ]
-"40
+"50
 } 0
-"54
+"68
 [v _kutuphaneyi_baslat kutuphaneyi_baslat `(v  1 e 1 0 ]
 {
-"67
+"83
 } 0
-"42
+"52
 [v _ekran_temizle ekran_temizle `(v  1 e 1 0 ]
 {
-"45
+"57
 } 0
-"47
+"59
 [v _imleci_ayarla imleci_ayarla `(v  1 e 1 0 ]
 {
 [v imleci_ayarla@x x `uc  1 a 1 wreg ]
 [v imleci_ayarla@x x `uc  1 a 1 wreg ]
 [v imleci_ayarla@y y `uc  1 p 1 8 ]
+"62
 [v imleci_ayarla@x x `uc  1 a 1 9 ]
-"52
+"66
 } 0
-"22
+"27
 [v _komut_gonder komut_gonder `(v  1 e 1 0 ]
 {
 [v komut_gonder@komut komut `uc  1 a 1 wreg ]
 [v komut_gonder@komut komut `uc  1 a 1 wreg ]
+"30
 [v komut_gonder@komut komut `uc  1 a 1 7 ]
-"24
+"31
 } 0
-"9
+"12
 [v _komut_calistir komut_calistir `(v  1 e 1 0 ]
 {
 [v komut_calistir@komut komut `uc  1 a 1 wreg ]
 [v komut_calistir@komut komut `uc  1 a 1 wreg ]
+"15
 [v komut_calistir@komut komut `uc  1 a 1 6 ]
-"20
+"25
 } 0
 "3
 [v _bekle_milisaniye bekle_milisaniye `(v  1 e 1 0 ]
 {
-"4
+"6
 [v bekle_milisaniye@i i `ui  1 a 2 3 ]
 "3
 [v bekle_milisaniye@milisaniye milisaniye `ui  1 p 2 0 ]
-"7
+"10
 } 0
 "5 C:\Users\furkan\Desktop\PIC16F877A\proje.X\main.c
 [v _duty_gir duty_gir `(v  1 e 1 0 ]
 {
 [v duty_gir@deger deger `i  1 p 2 0 ]
-"10
+"15
 } 0
 "62 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c90\common\ftmul.c
 [v ___ftmul __ftmul `(f  1 e 3 0 ]

@@ -34,15 +34,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TMR2 `Vuc ~T0 @X0 0 e@17 ]
 "1816
 [v _PR2 `Vuc ~T0 @X0 0 e@146 ]
-"49 LCD_library.h
+"54 LCD_library.h
 [v _kutuphaneyi_baslat `(v ~T0 @X0 0 ef ]
-"46
+"51
 [v _ekran_temizle `(v ~T0 @X0 0 ef ]
-"47
+"52
 [v _metin_yaz `(v ~T0 @X0 0 ef1`*Cuc ]
-"48
+"53
 [v _imleci_ayarla `(v ~T0 @X0 0 ef2`uc`uc ]
-"44
+"49
 [v _bekle_milisaniye `(v ~T0 @X0 0 ef1`ui ]
 [v F38 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v2.45\pic\include\builtins.h
@@ -1143,13 +1143,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x WRT=OFF ]
 "20
 [p x CP=OFF ]
-[; ;LCD_library.h: 44: extern void bekle_milisaniye(unsigned int milisaniye);
-[; ;LCD_library.h: 45: extern void komut_gonder(unsigned char komut);
-[; ;LCD_library.h: 46: extern void ekran_temizle(void);
-[; ;LCD_library.h: 47: extern void metin_yaz(const char *metin);
-[; ;LCD_library.h: 48: extern void imleci_ayarla(unsigned char x, unsigned char y);
-[; ;LCD_library.h: 49: extern void kutuphaneyi_baslat(void);
-[; ;LCD_library.h: 50: extern void komut_calistir(unsigned char komut);
+[; ;LCD_library.h: 49: extern void bekle_milisaniye(unsigned int milisaniye);
+[; ;LCD_library.h: 50: extern void komut_gonder(unsigned char komut);
+[; ;LCD_library.h: 51: extern void ekran_temizle(void);
+[; ;LCD_library.h: 52: extern void metin_yaz(const char *metin);
+[; ;LCD_library.h: 53: extern void imleci_ayarla(unsigned char x, unsigned char y);
+[; ;LCD_library.h: 54: extern void kutuphaneyi_baslat(void);
+[; ;LCD_library.h: 55: extern void komut_calistir(unsigned char komut);
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
@@ -1191,354 +1191,354 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _deger `i ~T0 @X0 1 r1 ]
 "6
 [f ]
-[; ;main.c: 7: CCP1X = deger & 2;
-"7
-[e = _CCP1X -> & _deger -> 2 `i `b ]
-[; ;main.c: 8: CCP1Y = deger & 1;
-"8
-[e = _CCP1Y -> & _deger -> 1 `i `b ]
-[; ;main.c: 9: CCPR1L = deger >> 2;
+[; ;main.c: 9: CCP1X = deger & 2;
 "9
-[e = _CCPR1L -> >> _deger -> 2 `i `uc ]
-[; ;main.c: 10: }
+[e = _CCP1X -> & _deger -> 2 `i `b ]
+[; ;main.c: 10: CCP1Y = deger & 1;
 "10
+[e = _CCP1Y -> & _deger -> 1 `i `b ]
+[; ;main.c: 14: CCPR1L = deger >> 2;
+"14
+[e = _CCPR1L -> >> _deger -> 2 `i `uc ]
+[; ;main.c: 15: }
+"15
 [e :UE 96 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"12
+"17
 [v _main `(v ~T0 @X0 1 ef ]
-"13
+"18
 {
-[; ;main.c: 12: void main()
-[; ;main.c: 13: {
+[; ;main.c: 17: void main()
+[; ;main.c: 18: {
 [e :U _main ]
 [f ]
-"14
-[v _adc_deger `i ~T0 @X0 1 a ]
-"15
-[v _voltaj_deger `f ~T0 @X0 1 a ]
-"16
-[v _voltaj_deger_char `uc ~T0 @X0 -> 10 `i a ]
-[; ;main.c: 14: int adc_deger;
-[; ;main.c: 15: float voltaj_deger;
-[; ;main.c: 16: char voltaj_deger_char[10];
-[; ;main.c: 17: TRISA = 1;
-"17
-[e = _TRISA -> -> 1 `i `uc ]
-[; ;main.c: 18: TRISB = 0B11100000;
-"18
-[e = _TRISB -> -> 224 `i `uc ]
-[; ;main.c: 19: TRISC = 0;
 "19
-[e = _TRISC -> -> 0 `i `uc ]
-[; ;main.c: 20: TRISD = 0;
+[v _adc_deger `i ~T0 @X0 1 a ]
 "20
-[e = _TRISD -> -> 0 `i `uc ]
-[; ;main.c: 21: PORTA = 0;
+[v _voltaj_deger `f ~T0 @X0 1 a ]
 "21
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 22: PORTC = 0;
-"22
-[e = _PORTC -> -> 0 `i `uc ]
-[; ;main.c: 23: PORTB = 0;
-"23
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 24: PORTD = 0;
+[v _voltaj_deger_char `uc ~T0 @X0 -> 10 `i a ]
+[; ;main.c: 19: int adc_deger;
+[; ;main.c: 20: float voltaj_deger;
+[; ;main.c: 21: char voltaj_deger_char[10];
+[; ;main.c: 24: TRISA = 1;
 "24
-[e = _PORTD -> -> 0 `i `uc ]
-[; ;main.c: 26: T2CON = 0B00000101;
+[e = _TRISA -> -> 1 `i `uc ]
+[; ;main.c: 25: TRISB = 0B11100000;
+"25
+[e = _TRISB -> -> 224 `i `uc ]
+[; ;main.c: 26: TRISC = 0;
 "26
-[e = _T2CON -> -> 5 `i `uc ]
-[; ;main.c: 27: CCP1CON = 0B00001111;
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;main.c: 27: TRISD = 0;
 "27
-[e = _CCP1CON -> -> 15 `i `uc ]
-[; ;main.c: 28: ADCON1 = 0b11000000;
-"28
-[e = _ADCON1 -> -> 192 `i `uc ]
-[; ;main.c: 29: ADCON0 = 0b00010001;
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;main.c: 29: PORTA = 0;
 "29
-[e = _ADCON0 -> -> 17 `i `uc ]
-[; ;main.c: 30: TMR2 = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;main.c: 30: PORTC = 0;
 "30
-[e = _TMR2 -> -> 0 `i `uc ]
-[; ;main.c: 32: PR2 = 255;
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;main.c: 31: PORTB = 0;
+"31
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 32: PORTD = 0;
 "32
-[e = _PR2 -> -> 255 `i `uc ]
-[; ;main.c: 34: duty_gir(0);
-"34
-[e ( _duty_gir (1 -> 0 `i ]
-[; ;main.c: 35: kutuphaneyi_baslat();
+[e = _PORTD -> -> 0 `i `uc ]
+[; ;main.c: 35: T2CON = 0B00000101;
 "35
-[e ( _kutuphaneyi_baslat ..  ]
-[; ;main.c: 36: ekran_temizle();
-"36
-[e ( _ekran_temizle ..  ]
-[; ;main.c: 37: metin_yaz("Furkan T.Bademci");
-"37
-[e ( _metin_yaz (1 :s 1C ]
-[; ;main.c: 38: imleci_ayarla(2, 1);
+[e = _T2CON -> -> 5 `i `uc ]
+[; ;main.c: 38: CCP1CON = 0B00001111;
 "38
-[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-[; ;main.c: 39: metin_yaz("G210104016");
-"39
-[e ( _metin_yaz (1 :s 2C ]
-[; ;main.c: 40: bekle_milisaniye(400);
-"40
-[e ( _bekle_milisaniye (1 -> -> 400 `i `ui ]
-[; ;main.c: 41: ekran_temizle();
+[e = _CCP1CON -> -> 15 `i `uc ]
+[; ;main.c: 41: ADCON1 = 0b11000000;
 "41
-[e ( _ekran_temizle ..  ]
-[; ;main.c: 42: imleci_ayarla(2, 5);
+[e = _ADCON1 -> -> 192 `i `uc ]
+[; ;main.c: 42: ADCON0 = 0b00010001;
 "42
-[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 43: metin_yaz("YON:DUR");
-"43
-[e ( _metin_yaz (1 :s 3C ]
-[; ;main.c: 45: while (1)
-"45
-[e :U 99 ]
-[; ;main.c: 46: {
+[e = _ADCON0 -> -> 17 `i `uc ]
+[; ;main.c: 44: TMR2 = 0;
+"44
+[e = _TMR2 -> -> 0 `i `uc ]
+[; ;main.c: 46: PR2 = 255;
 "46
-{
-[; ;main.c: 47: _delay((unsigned long)((10)*(4000000/4000.0)));
-"47
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 48: ADCON0bits.CHS2 = 0;
+[e = _PR2 -> -> 255 `i `uc ]
+[; ;main.c: 48: duty_gir(0);
 "48
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
-[; ;main.c: 49: ADCON0bits.CHS1 = 1;
+[e ( _duty_gir (1 -> 0 `i ]
+[; ;main.c: 49: kutuphaneyi_baslat();
 "49
-[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
-[; ;main.c: 50: ADCON0bits.CHS0 = 0;
+[e ( _kutuphaneyi_baslat ..  ]
+[; ;main.c: 50: ekran_temizle();
 "50
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-[; ;main.c: 51: ADCON0bits.GO = 1;
+[e ( _ekran_temizle ..  ]
+[; ;main.c: 51: metin_yaz("Furkan T.Bademci");
 "51
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-[; ;main.c: 52: while (ADCON0bits.GO_nDONE)
+[e ( _metin_yaz (1 :s 1C ]
+[; ;main.c: 52: imleci_ayarla(2, 1);
 "52
+[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 53: metin_yaz("G210104016");
+"53
+[e ( _metin_yaz (1 :s 2C ]
+[; ;main.c: 54: bekle_milisaniye(400);
+"54
+[e ( _bekle_milisaniye (1 -> -> 400 `i `ui ]
+[; ;main.c: 55: ekran_temizle();
+"55
+[e ( _ekran_temizle ..  ]
+[; ;main.c: 56: imleci_ayarla(2, 5);
+"56
+[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 57: metin_yaz("YON:DUR");
+"57
+[e ( _metin_yaz (1 :s 3C ]
+[; ;main.c: 59: while (1)
+"59
+[e :U 99 ]
+[; ;main.c: 60: {
+"60
+{
+[; ;main.c: 61: _delay((unsigned long)((10)*(4000000/4000.0)));
+"61
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 62: ADCON0bits.CHS2 = 0;
+"62
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+[; ;main.c: 63: ADCON0bits.CHS1 = 1;
+"63
+[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
+[; ;main.c: 64: ADCON0bits.CHS0 = 0;
+"64
+[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
+[; ;main.c: 65: ADCON0bits.GO = 1;
+"65
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+[; ;main.c: 67: while (ADCON0bits.GO_nDONE)
+"67
 [e $U 101  ]
 [e :U 102 ]
-[; ;main.c: 53: ;
-"53
+[; ;main.c: 68: ;
+"68
 [e :U 101 ]
-"52
+"67
 [e $ != -> . . _ADCON0bits 0 2 `i -> -> -> 0 `i `Vuc `i 102  ]
 [e :U 103 ]
-[; ;main.c: 54: adc_deger = (ADRESH * 256 + ADRESL);
-"54
+[; ;main.c: 70: adc_deger = (ADRESH * 256 + ADRESL);
+"70
 [e = _adc_deger + * -> _ADRESH `i -> 256 `i -> _ADRESL `i ]
-[; ;main.c: 56: voltaj_deger = adc_deger * 0.0049;
-"56
-[e = _voltaj_deger -> * -> _adc_deger `d .0.0049 `f ]
-[; ;main.c: 66: if (voltaj_deger > 4.97)
-"66
-[e $ ! > -> _voltaj_deger `d .4.97 104  ]
-[; ;main.c: 67: {
-"67
-{
-[; ;main.c: 68: duty_gir(1023);
-"68
-[e ( _duty_gir (1 -> 1023 `i ]
-[; ;main.c: 69: imleci_ayarla(1, 5);
-"69
-[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 71: metin_yaz("HIZ:%100");
-"71
-[e ( _metin_yaz (1 :s 4C ]
+[; ;main.c: 72: voltaj_deger = adc_deger * 0.0049;
 "72
-}
-[; ;main.c: 72: }
-[e $U 105  ]
-"73
-[e :U 104 ]
-[; ;main.c: 73: else if (voltaj_deger > 3.75)
-[e $ ! > -> _voltaj_deger `d .3.75 106  ]
-[; ;main.c: 74: {
-"74
-{
-[; ;main.c: 75: duty_gir(750);
+[e = _voltaj_deger -> * -> _adc_deger `d .0.0049 `f ]
+[; ;main.c: 75: if (voltaj_deger > 4.97)
 "75
-[e ( _duty_gir (1 -> 750 `i ]
-[; ;main.c: 76: imleci_ayarla(1, 5);
+[e $ ! > -> _voltaj_deger `d .4.97 104  ]
+[; ;main.c: 76: {
 "76
-[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 77: metin_yaz("HIZ: %75");
+{
+[; ;main.c: 77: duty_gir(1023);
 "77
-[e ( _metin_yaz (1 :s 5C ]
+[e ( _duty_gir (1 -> 1023 `i ]
+[; ;main.c: 78: imleci_ayarla(1, 5);
 "78
-}
-[; ;main.c: 78: }
-[e $U 107  ]
+[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 79: metin_yaz("HIZ:%100");
 "79
-[e :U 106 ]
-[; ;main.c: 79: else if (voltaj_deger > 2.50)
-[e $ ! > -> _voltaj_deger `d .2.50 108  ]
-[; ;main.c: 80: {
+[e ( _metin_yaz (1 :s 4C ]
 "80
-{
-[; ;main.c: 81: duty_gir(512);
+}
+[; ;main.c: 80: }
+[e $U 105  ]
 "81
-[e ( _duty_gir (1 -> 512 `i ]
-[; ;main.c: 82: imleci_ayarla(1, 5);
+[e :U 104 ]
+[; ;main.c: 81: else if (voltaj_deger > 3.75)
+[e $ ! > -> _voltaj_deger `d .3.75 106  ]
+[; ;main.c: 82: {
 "82
-[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 83: metin_yaz("HIZ: %50");
+{
+[; ;main.c: 83: duty_gir(750);
 "83
-[e ( _metin_yaz (1 :s 6C ]
+[e ( _duty_gir (1 -> 750 `i ]
+[; ;main.c: 84: imleci_ayarla(1, 5);
 "84
-}
-[; ;main.c: 84: }
-[e $U 109  ]
+[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 85: metin_yaz("HIZ: %75");
 "85
-[e :U 108 ]
-[; ;main.c: 85: else if (voltaj_deger > 1.75)
-[e $ ! > -> _voltaj_deger `d .1.75 110  ]
-[; ;main.c: 86: {
+[e ( _metin_yaz (1 :s 5C ]
 "86
-{
-[; ;main.c: 87: duty_gir(250);
-"87
-[e ( _duty_gir (1 -> 250 `i ]
-[; ;main.c: 88: imleci_ayarla(1, 5);
-"88
-[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 89: metin_yaz("HIZ: %25");
-"89
-[e ( _metin_yaz (1 :s 7C ]
-"90
 }
-[; ;main.c: 90: }
-[e $U 111  ]
-"92
-[e :U 110 ]
-[; ;main.c: 92: else if (voltaj_deger > 0.00)
-[e $ ! > -> _voltaj_deger `d .0.00 112  ]
-[; ;main.c: 93: {
-"93
+[; ;main.c: 86: }
+[e $U 107  ]
+"87
+[e :U 106 ]
+[; ;main.c: 87: else if (voltaj_deger > 2.50)
+[e $ ! > -> _voltaj_deger `d .2.50 108  ]
+[; ;main.c: 88: {
+"88
 {
-[; ;main.c: 94: duty_gir(0);
-"94
-[e ( _duty_gir (1 -> 0 `i ]
-[; ;main.c: 95: imleci_ayarla(1, 5);
-"95
+[; ;main.c: 89: duty_gir(512);
+"89
+[e ( _duty_gir (1 -> 512 `i ]
+[; ;main.c: 90: imleci_ayarla(1, 5);
+"90
 [e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 96: metin_yaz("HIZ: %00");
+[; ;main.c: 91: metin_yaz("HIZ: %50");
+"91
+[e ( _metin_yaz (1 :s 6C ]
+"92
+}
+[; ;main.c: 92: }
+[e $U 109  ]
+"93
+[e :U 108 ]
+[; ;main.c: 93: else if (voltaj_deger > 1.75)
+[e $ ! > -> _voltaj_deger `d .1.75 110  ]
+[; ;main.c: 94: {
+"94
+{
+[; ;main.c: 95: duty_gir(250);
+"95
+[e ( _duty_gir (1 -> 250 `i ]
+[; ;main.c: 96: imleci_ayarla(1, 5);
 "96
-[e ( _metin_yaz (1 :s 8C ]
-[; ;main.c: 97: RC3 = 0;
+[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 97: metin_yaz("HIZ: %25");
 "97
-[e = _RC3 -> -> 0 `i `b ]
-[; ;main.c: 98: RC5 = 0;
+[e ( _metin_yaz (1 :s 7C ]
 "98
-[e = _RC5 -> -> 0 `i `b ]
-[; ;main.c: 99: RC4 = 0;
+}
+[; ;main.c: 98: }
+[e $U 111  ]
 "99
-[e = _RC4 -> -> 0 `i `b ]
-[; ;main.c: 100: RC6 = 0;
+[e :U 110 ]
+[; ;main.c: 99: else if (voltaj_deger > 0.00)
+[e $ ! > -> _voltaj_deger `d .0.00 112  ]
+[; ;main.c: 100: {
 "100
-[e = _RC6 -> -> 0 `i `b ]
+{
+[; ;main.c: 101: duty_gir(0);
+"101
+[e ( _duty_gir (1 -> 0 `i ]
+[; ;main.c: 102: imleci_ayarla(1, 5);
 "102
+[e ( _imleci_ayarla (2 , -> -> 1 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 103: metin_yaz("HIZ: %00");
+"103
+[e ( _metin_yaz (1 :s 8C ]
+[; ;main.c: 104: RC3 = 0;
+"104
+[e = _RC3 -> -> 0 `i `b ]
+[; ;main.c: 105: RC5 = 0;
+"105
+[e = _RC5 -> -> 0 `i `b ]
+[; ;main.c: 106: RC4 = 0;
+"106
+[e = _RC4 -> -> 0 `i `b ]
+[; ;main.c: 107: RC6 = 0;
+"107
+[e = _RC6 -> -> 0 `i `b ]
+"108
 }
 [e :U 112 ]
-"104
+"111
 [e :U 111 ]
 [e :U 109 ]
 [e :U 107 ]
 [e :U 105 ]
-[; ;main.c: 102: }
-[; ;main.c: 104: if (RB7 == 1)
+[; ;main.c: 108: }
+[; ;main.c: 111: if (RB7 == 1)
 [e $ ! == -> _RB7 `i -> 1 `i 113  ]
-[; ;main.c: 105: {
-"105
-{
-[; ;main.c: 106: RC4 = 1;
-"106
-[e = _RC4 -> -> 1 `i `b ]
-[; ;main.c: 107: RC6 = 1;
-"107
-[e = _RC6 -> -> 1 `i `b ]
-[; ;main.c: 109: RC3 = 0;
-"109
-[e = _RC3 -> -> 0 `i `b ]
-[; ;main.c: 110: RC5 = 0;
-"110
-[e = _RC5 -> -> 0 `i `b ]
-[; ;main.c: 111: imleci_ayarla(2, 5);
-"111
-[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 112: metin_yaz("YON:SOL");
+[; ;main.c: 112: {
 "112
-[e ( _metin_yaz (1 :s 9C ]
+{
+[; ;main.c: 113: RC4 = 1;
 "113
+[e = _RC4 -> -> 1 `i `b ]
+[; ;main.c: 114: RC6 = 1;
+"114
+[e = _RC6 -> -> 1 `i `b ]
+[; ;main.c: 115: RC3 = 0;
+"115
+[e = _RC3 -> -> 0 `i `b ]
+[; ;main.c: 116: RC5 = 0;
+"116
+[e = _RC5 -> -> 0 `i `b ]
+[; ;main.c: 117: imleci_ayarla(2, 5);
+"117
+[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 118: metin_yaz("YON:SOL");
+"118
+[e ( _metin_yaz (1 :s 9C ]
+"119
 }
 [e :U 113 ]
-[; ;main.c: 113: }
-[; ;main.c: 114: if (RB6 == 1)
-"114
-[e $ ! == -> _RB6 `i -> 1 `i 114  ]
-[; ;main.c: 115: {
-"115
-{
-[; ;main.c: 117: RC3 = 1;
-"117
-[e = _RC3 -> -> 1 `i `b ]
-[; ;main.c: 118: RC5 = 1;
-"118
-[e = _RC5 -> -> 1 `i `b ]
-[; ;main.c: 120: RC4 = 0;
+[; ;main.c: 119: }
+[; ;main.c: 120: if (RB6 == 1)
 "120
-[e = _RC4 -> -> 0 `i `b ]
-[; ;main.c: 121: RC6 = 0;
+[e $ ! == -> _RB6 `i -> 1 `i 114  ]
+[; ;main.c: 121: {
 "121
-[e = _RC6 -> -> 0 `i `b ]
-[; ;main.c: 122: imleci_ayarla(2, 5);
+{
+[; ;main.c: 122: RC3 = 1;
 "122
-[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 123: metin_yaz("YON:SAG");
+[e = _RC3 -> -> 1 `i `b ]
+[; ;main.c: 123: RC5 = 1;
 "123
-[e ( _metin_yaz (1 :s 10C ]
+[e = _RC5 -> -> 1 `i `b ]
+[; ;main.c: 124: RC4 = 0;
 "124
+[e = _RC4 -> -> 0 `i `b ]
+[; ;main.c: 125: RC6 = 0;
+"125
+[e = _RC6 -> -> 0 `i `b ]
+[; ;main.c: 126: imleci_ayarla(2, 5);
+"126
+[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 127: metin_yaz("YON:SAG");
+"127
+[e ( _metin_yaz (1 :s 10C ]
+"128
 }
 [e :U 114 ]
-[; ;main.c: 124: }
-[; ;main.c: 125: if (RB5 == 1)
-"125
-[e $ ! == -> _RB5 `i -> 1 `i 115  ]
-[; ;main.c: 126: {
-"126
-{
-[; ;main.c: 127: RC3 = 0;
-"127
-[e = _RC3 -> -> 0 `i `b ]
-[; ;main.c: 128: RC5 = 0;
-"128
-[e = _RC5 -> -> 0 `i `b ]
-[; ;main.c: 129: RC4 = 0;
+[; ;main.c: 128: }
+[; ;main.c: 129: if (RB5 == 1)
 "129
-[e = _RC4 -> -> 0 `i `b ]
-[; ;main.c: 130: RC6 = 0;
+[e $ ! == -> _RB5 `i -> 1 `i 115  ]
+[; ;main.c: 130: {
 "130
-[e = _RC6 -> -> 0 `i `b ]
-[; ;main.c: 131: imleci_ayarla(2, 5);
+{
+[; ;main.c: 131: RC3 = 0;
 "131
-[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
-[; ;main.c: 132: metin_yaz("YON:DUR");
+[e = _RC3 -> -> 0 `i `b ]
+[; ;main.c: 132: RC5 = 0;
 "132
-[e ( _metin_yaz (1 :s 11C ]
+[e = _RC5 -> -> 0 `i `b ]
+[; ;main.c: 133: RC4 = 0;
 "133
+[e = _RC4 -> -> 0 `i `b ]
+[; ;main.c: 134: RC6 = 0;
+"134
+[e = _RC6 -> -> 0 `i `b ]
+[; ;main.c: 135: imleci_ayarla(2, 5);
+"135
+[e ( _imleci_ayarla (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 136: metin_yaz("YON:DUR");
+"136
+[e ( _metin_yaz (1 :s 11C ]
+"137
 }
 [e :U 115 ]
-"134
+"138
 }
 [e :U 98 ]
-"45
+"59
 [e $U 99  ]
 [e :U 100 ]
-[; ;main.c: 133: }
-[; ;main.c: 134: }
-[; ;main.c: 135: }
-"135
+[; ;main.c: 137: }
+[; ;main.c: 138: }
+[; ;main.c: 139: }
+"139
 [e :UE 97 ]
 }
 [a 1C 70 117 114 107 97 110 32 84 46 66 97 100 101 109 99 105 0 ]

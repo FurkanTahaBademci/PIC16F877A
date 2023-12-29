@@ -1071,241 +1071,269 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x WRT=OFF ]
 "20
 [p x CP=OFF ]
-[; ;LCD_library.h: 44: extern void bekle_milisaniye(unsigned int milisaniye);
-[; ;LCD_library.h: 45: extern void komut_gonder(unsigned char komut);
-[; ;LCD_library.h: 46: extern void ekran_temizle(void);
-[; ;LCD_library.h: 47: extern void metin_yaz(const char *metin);
-[; ;LCD_library.h: 48: extern void imleci_ayarla(unsigned char x, unsigned char y);
-[; ;LCD_library.h: 49: extern void kutuphaneyi_baslat(void);
-[; ;LCD_library.h: 50: extern void komut_calistir(unsigned char komut);
+[; ;LCD_library.h: 49: extern void bekle_milisaniye(unsigned int milisaniye);
+[; ;LCD_library.h: 50: extern void komut_gonder(unsigned char komut);
+[; ;LCD_library.h: 51: extern void ekran_temizle(void);
+[; ;LCD_library.h: 52: extern void metin_yaz(const char *metin);
+[; ;LCD_library.h: 53: extern void imleci_ayarla(unsigned char x, unsigned char y);
+[; ;LCD_library.h: 54: extern void kutuphaneyi_baslat(void);
+[; ;LCD_library.h: 55: extern void komut_calistir(unsigned char komut);
 "3 LCD_library.c
 [v _bekle_milisaniye `(v ~T0 @X0 1 ef1`ui ]
-{
-[; ;LCD_library.c: 3: void bekle_milisaniye(unsigned int milisaniye) {
-[e :U _bekle_milisaniye ]
-[v _milisaniye `ui ~T0 @X0 1 r1 ]
-[f ]
-[; ;LCD_library.c: 4: for (unsigned int i = 0; i < milisaniye; i++) {
 "4
+{
+[; ;LCD_library.c: 3: void bekle_milisaniye(unsigned int milisaniye)
+[; ;LCD_library.c: 4: {
+[e :U _bekle_milisaniye ]
+"3
+[v _milisaniye `ui ~T0 @X0 1 r1 ]
+"4
+[f ]
+[; ;LCD_library.c: 6: for (unsigned int i = 0; i < milisaniye; i++)
+"6
 {
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
 [e $U 99  ]
+"7
 [e :U 96 ]
+[; ;LCD_library.c: 7: {
 {
-[; ;LCD_library.c: 5: _delay((unsigned long)((1)*(4000000/4000.0)));
-"5
+[; ;LCD_library.c: 8: _delay((unsigned long)((1)*(4000000/4000.0)));
+"8
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"6
+"9
 }
-"4
+"6
 [e ++ _i -> -> 1 `i `ui ]
 [e :U 99 ]
 [e $ < _i _milisaniye 96  ]
 [e :U 97 ]
-"6
+"9
 }
-[; ;LCD_library.c: 6: }
-[; ;LCD_library.c: 7: }
-"7
+[; ;LCD_library.c: 9: }
+[; ;LCD_library.c: 10: }
+"10
 [e :UE 95 ]
 }
-"9
-[v _komut_calistir `(v ~T0 @X0 1 ef1`uc ]
-{
-[; ;LCD_library.c: 9: void komut_calistir(unsigned char komut) {
-[e :U _komut_calistir ]
-[v _komut `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;LCD_library.c: 10: RB1 = 0;
-"10
-[e = _RB1 -> -> 0 `i `b ]
-[; ;LCD_library.c: 11: RB0 = 0;
-"11
-[e = _RB0 -> -> 0 `i `b ]
-[; ;LCD_library.c: 12: RB2 = 1;
 "12
-[e = _RB2 -> -> 1 `i `b ]
-[; ;LCD_library.c: 13: PORTD = (komut & 0xF0);
+[v _komut_calistir `(v ~T0 @X0 1 ef1`uc ]
 "13
-[e = _PORTD -> & -> _komut `i -> 240 `i `uc ]
-[; ;LCD_library.c: 14: RB2 = 0;
-"14
-[e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 15: bekle_milisaniye(10);
+{
+[; ;LCD_library.c: 12: void komut_calistir(unsigned char komut)
+[; ;LCD_library.c: 13: {
+[e :U _komut_calistir ]
+"12
+[v _komut `uc ~T0 @X0 1 r1 ]
+"13
+[f ]
+[; ;LCD_library.c: 15: RB1 = 0;
 "15
-[e ( _bekle_milisaniye (1 -> -> 10 `i `ui ]
-[; ;LCD_library.c: 16: RB2 = 1;
+[e = _RB1 -> -> 0 `i `b ]
+[; ;LCD_library.c: 16: RB0 = 0;
 "16
-[e = _RB2 -> -> 1 `i `b ]
-[; ;LCD_library.c: 17: PORTD = ((komut & 0x0F) << 4);
+[e = _RB0 -> -> 0 `i `b ]
+[; ;LCD_library.c: 17: RB2 = 1;
 "17
-[e = _PORTD -> << & -> _komut `i -> 15 `i -> 4 `i `uc ]
-[; ;LCD_library.c: 18: RB2 = 0;
+[e = _RB2 -> -> 1 `i `b ]
+[; ;LCD_library.c: 18: PORTD = (komut & 0xF0);
 "18
-[e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 19: bekle_milisaniye(10);
+[e = _PORTD -> & -> _komut `i -> 240 `i `uc ]
+[; ;LCD_library.c: 19: RB2 = 0;
 "19
-[e ( _bekle_milisaniye (1 -> -> 10 `i `ui ]
-[; ;LCD_library.c: 20: }
+[e = _RB2 -> -> 0 `i `b ]
+[; ;LCD_library.c: 20: bekle_milisaniye(10);
 "20
+[e ( _bekle_milisaniye (1 -> -> 10 `i `ui ]
+[; ;LCD_library.c: 21: RB2 = 1;
+"21
+[e = _RB2 -> -> 1 `i `b ]
+[; ;LCD_library.c: 22: PORTD = ((komut & 0x0F) << 4);
+"22
+[e = _PORTD -> << & -> _komut `i -> 15 `i -> 4 `i `uc ]
+[; ;LCD_library.c: 23: RB2 = 0;
+"23
+[e = _RB2 -> -> 0 `i `b ]
+[; ;LCD_library.c: 24: bekle_milisaniye(10);
+"24
+[e ( _bekle_milisaniye (1 -> -> 10 `i `ui ]
+[; ;LCD_library.c: 25: }
+"25
 [e :UE 100 ]
 }
-"22
+"27
 [v _komut_gonder `(v ~T0 @X0 1 ef1`uc ]
+"28
 {
-[; ;LCD_library.c: 22: void komut_gonder(unsigned char komut) {
+[; ;LCD_library.c: 27: void komut_gonder(unsigned char komut)
+[; ;LCD_library.c: 28: {
 [e :U _komut_gonder ]
+"27
 [v _komut `uc ~T0 @X0 1 r1 ]
+"28
 [f ]
-[; ;LCD_library.c: 23: komut_calistir(komut);
-"23
+[; ;LCD_library.c: 30: komut_calistir(komut);
+"30
 [e ( _komut_calistir (1 _komut ]
-[; ;LCD_library.c: 24: }
-"24
+[; ;LCD_library.c: 31: }
+"31
 [e :UE 101 ]
 }
-"26
+"33
 [v _metin_yaz `(v ~T0 @X0 1 ef1`*Cuc ]
+"34
 {
-[; ;LCD_library.c: 26: void metin_yaz(const char *metin) {
+[; ;LCD_library.c: 33: void metin_yaz(const char *metin)
+[; ;LCD_library.c: 34: {
 [e :U _metin_yaz ]
+"33
 [v _metin `*Cuc ~T0 @X0 1 r1 ]
+"34
 [f ]
-[; ;LCD_library.c: 27: bekle_milisaniye(1);
-"27
+[; ;LCD_library.c: 36: bekle_milisaniye(1);
+"36
 [e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
-[; ;LCD_library.c: 28: while (*metin) {
-"28
+[; ;LCD_library.c: 37: while (*metin)
+"37
 [e $U 103  ]
 [e :U 104 ]
-{
-[; ;LCD_library.c: 29: RB0 = 1;
-"29
-[e = _RB0 -> -> 1 `i `b ]
-[; ;LCD_library.c: 30: RB2 = 1;
-"30
-[e = _RB2 -> -> 1 `i `b ]
-[; ;LCD_library.c: 31: PORTD = (*metin & 0xF0);
-"31
-[e = _PORTD -> & -> *U _metin `i -> 240 `i `uc ]
-[; ;LCD_library.c: 32: RB2 = 0;
-"32
-[e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 33: bekle_milisaniye(1);
-"33
-[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
-[; ;LCD_library.c: 34: RB2 = 1;
-"34
-[e = _RB2 -> -> 1 `i `b ]
-[; ;LCD_library.c: 35: PORTD = ((*metin & 0x0F) << 4);
-"35
-[e = _PORTD -> << & -> *U _metin `i -> 15 `i -> 4 `i `uc ]
-[; ;LCD_library.c: 36: RB2 = 0;
-"36
-[e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 37: bekle_milisaniye(1);
-"37
-[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
-[; ;LCD_library.c: 38: metin++;
+[; ;LCD_library.c: 38: {
 "38
-[e ++ _metin * -> -> 1 `i `x -> -> # *U _metin `i `x ]
+{
+[; ;LCD_library.c: 39: RB0 = 1;
 "39
+[e = _RB0 -> -> 1 `i `b ]
+[; ;LCD_library.c: 40: RB2 = 1;
+"40
+[e = _RB2 -> -> 1 `i `b ]
+[; ;LCD_library.c: 41: PORTD = (*metin & 0xF0);
+"41
+[e = _PORTD -> & -> *U _metin `i -> 240 `i `uc ]
+[; ;LCD_library.c: 42: RB2 = 0;
+"42
+[e = _RB2 -> -> 0 `i `b ]
+[; ;LCD_library.c: 43: bekle_milisaniye(1);
+"43
+[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
+[; ;LCD_library.c: 44: RB2 = 1;
+"44
+[e = _RB2 -> -> 1 `i `b ]
+[; ;LCD_library.c: 45: PORTD = ((*metin & 0x0F) << 4);
+"45
+[e = _PORTD -> << & -> *U _metin `i -> 15 `i -> 4 `i `uc ]
+[; ;LCD_library.c: 46: RB2 = 0;
+"46
+[e = _RB2 -> -> 0 `i `b ]
+[; ;LCD_library.c: 47: bekle_milisaniye(1);
+"47
+[e ( _bekle_milisaniye (1 -> -> 1 `i `ui ]
+[; ;LCD_library.c: 48: metin++;
+"48
+[e ++ _metin * -> -> 1 `i `x -> -> # *U _metin `i `x ]
+"49
 }
 [e :U 103 ]
-"28
+"37
 [e $ != -> *U _metin `i -> -> -> 0 `i `Cuc `i 104  ]
 [e :U 105 ]
-[; ;LCD_library.c: 39: }
-[; ;LCD_library.c: 40: }
-"40
+[; ;LCD_library.c: 49: }
+[; ;LCD_library.c: 50: }
+"50
 [e :UE 102 ]
 }
-"42
+"52
 [v _ekran_temizle `(v ~T0 @X0 1 ef ]
+"53
 {
-[; ;LCD_library.c: 42: void ekran_temizle(void) {
+[; ;LCD_library.c: 52: void ekran_temizle(void)
+[; ;LCD_library.c: 53: {
 [e :U _ekran_temizle ]
 [f ]
-[; ;LCD_library.c: 43: komut_gonder(1);
-"43
+[; ;LCD_library.c: 55: komut_gonder(1);
+"55
 [e ( _komut_gonder (1 -> -> 1 `i `uc ]
-[; ;LCD_library.c: 44: bekle_milisaniye(2);
-"44
+[; ;LCD_library.c: 56: bekle_milisaniye(2);
+"56
 [e ( _bekle_milisaniye (1 -> -> 2 `i `ui ]
-[; ;LCD_library.c: 45: }
-"45
+[; ;LCD_library.c: 57: }
+"57
 [e :UE 106 ]
 }
-"47
+"59
 [v _imleci_ayarla `(v ~T0 @X0 1 ef2`uc`uc ]
+"60
 {
-[; ;LCD_library.c: 47: void imleci_ayarla(unsigned char x, unsigned char y) {
+[; ;LCD_library.c: 59: void imleci_ayarla(unsigned char x, unsigned char y)
+[; ;LCD_library.c: 60: {
 [e :U _imleci_ayarla ]
+"59
 [v _x `uc ~T0 @X0 1 r1 ]
 [v _y `uc ~T0 @X0 1 r2 ]
+"60
 [f ]
-[; ;LCD_library.c: 48: if (x == 1)
-"48
+[; ;LCD_library.c: 62: if (x == 1)
+"62
 [e $ ! == -> _x `i -> 1 `i 108  ]
-[; ;LCD_library.c: 49: komut_gonder(128 + ((y - 1) % 16));
-"49
+[; ;LCD_library.c: 63: komut_gonder(128 + ((y - 1) % 16));
+"63
 [e ( _komut_gonder (1 -> + -> 128 `i % - -> _y `i -> 1 `i -> 16 `i `uc ]
 [e $U 109  ]
-"50
+"64
 [e :U 108 ]
-[; ;LCD_library.c: 50: else
-[; ;LCD_library.c: 51: komut_gonder(192 + ((y - 1) % 16));
-"51
+[; ;LCD_library.c: 64: else
+[; ;LCD_library.c: 65: komut_gonder(192 + ((y - 1) % 16));
+"65
 [e ( _komut_gonder (1 -> + -> 192 `i % - -> _y `i -> 1 `i -> 16 `i `uc ]
 [e :U 109 ]
-[; ;LCD_library.c: 52: }
-"52
+[; ;LCD_library.c: 66: }
+"66
 [e :UE 107 ]
 }
-"54
+"68
 [v _kutuphaneyi_baslat `(v ~T0 @X0 1 ef ]
+"69
 {
-[; ;LCD_library.c: 54: void kutuphaneyi_baslat(void) {
+[; ;LCD_library.c: 68: void kutuphaneyi_baslat(void)
+[; ;LCD_library.c: 69: {
 [e :U _kutuphaneyi_baslat ]
 [f ]
-[; ;LCD_library.c: 55: RB0 = 0;
-"55
+[; ;LCD_library.c: 71: RB0 = 0;
+"71
 [e = _RB0 -> -> 0 `i `b ]
-[; ;LCD_library.c: 56: RB2 = 0;
-"56
+[; ;LCD_library.c: 72: RB2 = 0;
+"72
 [e = _RB2 -> -> 0 `i `b ]
-[; ;LCD_library.c: 57: RB1 = 0;
-"57
+[; ;LCD_library.c: 73: RB1 = 0;
+"73
 [e = _RB1 -> -> 0 `i `b ]
-[; ;LCD_library.c: 58: bekle_milisaniye(15);
-"58
+[; ;LCD_library.c: 74: bekle_milisaniye(15);
+"74
 [e ( _bekle_milisaniye (1 -> -> 15 `i `ui ]
-[; ;LCD_library.c: 59: RB2 = 1;
-"59
+[; ;LCD_library.c: 75: RB2 = 1;
+"75
 [e = _RB2 -> -> 1 `i `b ]
-[; ;LCD_library.c: 60: komut_calistir(2);
-"60
+[; ;LCD_library.c: 76: komut_calistir(2);
+"76
 [e ( _komut_calistir (1 -> -> 2 `i `uc ]
-[; ;LCD_library.c: 61: bekle_milisaniye(2);
-"61
+[; ;LCD_library.c: 77: bekle_milisaniye(2);
+"77
 [e ( _bekle_milisaniye (1 -> -> 2 `i `ui ]
-[; ;LCD_library.c: 62: komut_calistir(40);
-"62
+[; ;LCD_library.c: 78: komut_calistir(40);
+"78
 [e ( _komut_calistir (1 -> -> 40 `i `uc ]
-[; ;LCD_library.c: 63: komut_calistir(4);
-"63
+[; ;LCD_library.c: 79: komut_calistir(4);
+"79
 [e ( _komut_calistir (1 -> -> 4 `i `uc ]
-[; ;LCD_library.c: 64: komut_calistir(12);
-"64
+[; ;LCD_library.c: 80: komut_calistir(12);
+"80
 [e ( _komut_calistir (1 -> -> 12 `i `uc ]
-[; ;LCD_library.c: 65: ekran_temizle();
-"65
+[; ;LCD_library.c: 81: ekran_temizle();
+"81
 [e ( _ekran_temizle ..  ]
-[; ;LCD_library.c: 66: komut_calistir(128);
-"66
+[; ;LCD_library.c: 82: komut_calistir(128);
+"82
 [e ( _komut_calistir (1 -> -> 128 `i `uc ]
-[; ;LCD_library.c: 67: }
-"67
+[; ;LCD_library.c: 83: }
+"83
 [e :UE 110 ]
 }
